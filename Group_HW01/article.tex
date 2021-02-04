@@ -1,0 +1,73 @@
+\documentclass[11pt]{article}
+\usepackage{setspace}
+\setstretch{1}
+\usepackage{amsmath,amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage[hang, flushmargin]{footmisc}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage[nameinlink]{cleveref}
+\usepackage{footnotebackref}
+\usepackage{url}
+\usepackage{listings}
+\usepackage[most]{tcolorbox}
+\usepackage{inconsolata}
+\usepackage[papersize={8.5in,11in}, margin=1in]{geometry}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{esint}
+\usepackage{url}
+\usepackage{enumitem}
+\usepackage{subfig}
+\usepackage{wasysym}
+\newcommand{\ilc}{\texttt}
+\usepackage{etoolbox}
+\usepackage{algorithm}
+\usepackage{changepage}
+% \usepackage{algorithmic}
+\usepackage[noend]{algpseudocode}
+\usepackage{tikz}
+\usetikzlibrary{matrix,positioning,arrows.meta,arrows}
+\patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
+% \PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
+
+\providecommand{\myceil}[1]{\left \lceil #1 \right \rceil }
+\providecommand{\myfloor}[1]{\left \lfloor #1 \right \rfloor }
+
+
+\begin{document}
+
+
+
+\title{\textbf{MATH 307: Group Homework 1}}
+
+
+\author{Shaochen (Henry) ZHONG, \ilc{sxz517} \\
+Zhitao (Robert) CHEN, \ilc{zxc325} \\
+John MAYS, \ilc{jkm100}}
+\date{Due and submitted on 12/05/2021 \\ Spring 2021, Dr. Guo}
+\maketitle
+
+
+
+\section*{Problem 1}
+
+\subsection*{$f: \mathbb{N} \to \mathbb{Z}$, $f(n) = z$ where $z^2 = n$}
+
+It is not a function as $\exists  n_0 \in \mathbb{N}$, assume $z_0 = \sqrt{n_0}$, we may have $z = \{z_0, -z_0\}$ both satisifying the requirement of $z^2 = n$. This suggests a one-to-many relationship and therefore not a function.
+
+
+\subsection*{$f: \mathbb{Q} \to \mathbb{Z}$, $f(m/n) = 3m + 2n$}
+
+To prove by contradiction. Assume $\frac{m}{n} = z$, we have $z = \frac{km}{kn}$ for $k \in \mathbb{Q}$; thus for the same input $z$, we will have multiple output values as $3km + 2kn$. This suggests a one-to-many relationship and therefore not a function.
+
+\subsection*{$g: \mathbb{R} \to \mathbb{R}$, $g(x) = x^3$}
+
+It is a function as for every input $x \in \mathbb{R}$, there are only one and only one output value $x^3$. This function is  \textit{bijective} as it shows perfect matching between its domain and codomain -- that every element in its domain is matched to an unique element in its codomain, and vice versa.
+
+\subsection*{$g: \mathbb{R} \to \mathbb{R}$, $g(x) = x^2$}
+
+It is a function as for every input $x \in \mathbb{R}$, there are only one and only one output value $x^2$. This function is \textit{surjective} as for $\{x_0, x_1\} \in \mathbb{R}$, let $x_0 = -x_1$, we have $f(x_0) = f(x_1) = (x_0)^2$. This suggests a many-to-one relationship and therefore a surjective function.
+
+\end{document}
+
