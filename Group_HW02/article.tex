@@ -1,0 +1,175 @@
+\documentclass[11pt]{article}
+\usepackage{setspace}
+\setstretch{1}
+\usepackage{amsmath,amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage[hang, flushmargin]{footmisc}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage[nameinlink]{cleveref}
+\usepackage{footnotebackref}
+\usepackage{url}
+\usepackage{listings}
+\usepackage[most]{tcolorbox}
+\usepackage{inconsolata}
+\usepackage[papersize={8.5in,11in}, margin=1in]{geometry}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{esint}
+\usepackage{url}
+\usepackage{enumitem}
+\usepackage{subfig}
+\usepackage{wasysym}
+\newcommand{\ilc}{\texttt}
+\usepackage{etoolbox}
+\usepackage{algorithm}
+\usepackage{changepage}
+% \usepackage{algorithmic}
+\usepackage[noend]{algpseudocode}
+\usepackage{tikz}
+\usetikzlibrary{matrix,positioning,arrows.meta,arrows}
+\patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
+% \PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
+
+\providecommand{\myceil}[1]{\left \lceil #1 \right \rceil }
+\providecommand{\myfloor}[1]{\left \lfloor #1 \right \rfloor }
+
+
+\begin{document}
+
+
+
+\title{\textbf{MATH 307: Group Homework 2}}
+
+
+\author{\textit{Group 8}\\
+Shaochen (Henry) ZHONG, Zhitao (Robert) CHEN, John MAYS, Huaijin XIN\\ \ilc{\{sxz517, zxc325, jkm100, hxx200\}@case.edu}}
+
+\date{Due and submitted on 02/12/2021 \\ Spring 2021, Dr. Guo}
+\maketitle
+
+
+
+\section*{Problem 1}
+
+\textit{ Prove that $\mathbb{C}$, the set of all complex valued numbers with the regular addition and multiplication of complex numbers is a field.}\newline
+
+
+%Some wording taken verbatim from Henry's IHW2:
+For the simplicity of discussion, say we have three complex numbers: $z_1,z_2,z_3 \in \mathbb{C}$ that can be represented respectively as:
+\begin{equation*}
+\begin{split}
+    z_1&=a+ib\\
+    z_2&=c+id\\
+    z_3&=e+if\\
+\end{split}
+\end{equation*}
+
+where $i^2 = -1$ and $a,b,c,d,e,f \in \mathbb{R}$.\newline
+
+\noindent $(\mathbb{C}, +, \times)$ is a field, because it satisfies all of the conditions for a field:
+\subsubsection*{\textbf{1. }$(\mathbb{C}, +)$ is an Abelian group:}
+\begin{enumerate}
+    \item Closure: $\forall z_1,z_2 \in \mathbb{C}, z_1+z_2 =(a+ib)+(c+id) = (a+b)+i(c+d) \in \mathbb{C}$
+    \item Associativity: $\forall z_1,z_2,z_3 \in \mathbb{C},z_1+(z_2+z_3)=(z_1+z_2)+z_3$\\
+    Proof:\\
+    $z_1+(z_2+z_3)=a+ib+((c+e)+i(d+f))=(a+c+e)+i(b+d+f)\\(z_1+z_2)+z_3=((a+c)+i(b+d))+e+if=(a+c+e)+i(b+d+f)$
+    \item Identity: $\forall z \in \mathbb{C}, \exists id=0+i0$ s.t $z+id=id+z=z$\\
+    Proof:\\
+    $z+(0+i0)=(a+0)+i(b+0)=a+ib=z$\\
+    $(0+i0)+z=(0+a)+i(0+b)=a+ib=z$
+    \item Inverse: $\forall z \in \mathbb{C}, \exists -z$ s.t $z+(-z)=0+i0$\\
+    Proof:\\
+    $z+(-z)=a+ib-(a+ib)=(a-a)+i(b-b)=0+0i$
+    \item Commutativity: $\forall z_1,z_2 \in \mathbb{C}, z_1+z_2=z_2+z_1$\\
+    Proof:\\
+    $z_1+z_2=a+ib+c+id=(a+c)+i(b+d)$\\
+    $z_2+z_1=c+id+a+ib=(a+c)+i(d+b)$\\
+\end{enumerate}
+​
+\subsubsection*{\textbf{2. }$\mathbb{C}, \times$ is a commutative monoid:}
+\begin{enumerate}
+    \item Closure: $\forall z_1,z_2 \in \mathbb{C}, z_1\times z_2 =(a+ib)\times (c+id) = (ac-bd)+i(bc+ad) \in \mathbb{C}$
+    \item Associativity: $\forall z_1,z_2,z_3 \in \mathbb{C},z_1\times (z_2\times z_3)=(z_1\times z_2)\times z_3$\\
+    Proof:\\
+    $z_1\times(z_2\times z_3)=(a+ib)\times((c+id)\times(e+if)=(a+ib)\times((ce-df)+i(de+cf))=(ace-adf-bde-bcf)+i(bce-dfb+ade+acf)$\\
+    $(z_1\times z_2)\times z_3=((a+ib)\times(c+id))\times(e+if)=((ac-bd)+i(bc+da))\times(e+if)=(eac-ebd-fbc-fda)+i(bce+dae+fac-fbd)$
+    \item Identity: $\forall z \in \mathbb{C}, \exists id=1+i0$ s.t $z\times id=id\times z=z$\\
+    Proof:\\
+    $z\times id=(a+ib)\times (1+i0)=(a-0)+i(b+0)=a+ib=z$\\
+    $id\times z=(1+i0)\times (a+ib)=(a-0)+i(b+0)=a+ib=z$
+    \item Commutativity: $\forall z_1,z_2 \in \mathbb{C}, z_1\times z_2=z_2\times z_1$\\
+    Proof:\\
+    $z_1\times z_2=(a+ib)\times(c+id)=(ac-bd)+i(cb+da)$\\
+    $z_2\times z_1=(c+id)\times(a+ib)=(ac-bd)+i(cb+da)$
+\end{enumerate}
+​
+\subsubsection*{\textbf{3. }$\forall z \in \mathbb{C}\backslash\{0+i0\}, \exists z^{-1}$ s.t. $z\times z^{-1}=1$}
+Proof:\\
+Assume $z=a+ib:$\\
+$z^{-1}=\frac{1}{z}=\frac{1}{a+ib}=\frac{a-ib}{(a+ib)\times(a-ib)}=\frac{a-ib}{a^2+b^2}$\\
+Now, $z\times z^{-1}=a+ib \times \frac{a-ib}{a^2+b^2} =\frac{(a-ib)\times (a+ib)}{a^2+b^2}=\frac{a^2+b^2}{a^2+b^2}=1$
+​
+\subsubsection*{\textbf{4. }$\times$ is distributive over $+$ s.t. $\forall z_1,z_2,z_3 \in \mathbb{C},$ it holds that $z_1\times(z_2+z_3)=z_1\times z_2 + z_1 \times z_3$}
+Proof:\\
+$z_1\times(z_2+z_3)=(a+ib)\times((c+id)+(e+if))=(a+ib)\times((c+e)+i(d+f))=(ac+ae-bd-bf)+i(bc+be+ad+af)=(ac-bd)+i(bc+ad)+(ae-bf)+i(be+fa)=(a+ib)\times(c+id)+(a+ib)\times(e+if)=z_1\times z_2 + z_1 \times z_3$
+
+
+
+\section*{Problem 2}
+
+\textit{Compute the multiplicative inverse of $z = 3 - 7i$ and express it in the form $a+ib$.}\newline
+
+Known that for $a + bi \neq 0$, we have its multiplicative inverse being $\frac{a}{a^2 + b^2} - i\frac{b}{a^2 + b^2} $.
+\begin{align*}
+    (3 - 7i)^{-1} &= \frac{3}{3^2 + 7^2} - i\frac{-7}{3^2 + 7^2} \\
+    &= \frac{3}{58} + i\frac{7}{58}
+\end{align*}
+
+\section*{Problem 3}
+\textit{Write the complex number $z = -1 - i$ in polar form, then compute $z^4$.}\newline
+
+We have the polar form of $z = -1 - i$ being:
+
+\begin{align*}
+    z &= \sqrt{1^2 + 1^2}(\frac{-1}{1^2 + 1^2} - i\frac{-1}{1^2 + 1^2}) \\
+    &= \sqrt{2}(\cos (\pi + \tan^{-1}(\frac{-1}{-1})) + i\sin( \pi + \tan^{-1}(\frac{-1}{-1})) ) \\
+    &= \sqrt{2}(\cos (\frac{5 \pi}{4}) + i\sin (\frac{5 \pi}{4}) )
+\end{align*}
+
+Now to calculate $z^4$ with \textsc{De Moivre's} formula:
+
+\begin{align*}
+    z^4 &= (\sqrt{2})^4(\cos (4 \cdot \frac{5 \pi}{4}) + i\sin (4 \cdot \frac{5 \pi}{4}) ) \\
+    &= 4 (\cos 5\pi + i\sin 5\pi ) \\
+    &= 4(-1 + 0) = -4
+\end{align*}
+
+\section*{Problem 4}
+\textit{Using the polar form, show that the product of a complex number $z = a + ib$ and its complex conjugate must be a real number greater than or equal to zero.}\newline
+
+For a complex number $z = a + ib$, let $r =\sqrt{a^2 + b^2}$ and $\theta = \tan^{-1}(\frac{b}{a})$, we may express its as polar form as
+$r(\cos \theta + i\sin \theta)$.
+
+Then we have:
+
+\begin{align*}
+    \overline{z} &= \overline{r} \cdot \overline{(\cos \theta + i\sin \theta)} \\
+    &= r \cdot  \overline{(\cos \theta + i\sin \theta)}  \\
+    &= r (\cos \theta - i\sin \theta)
+\end{align*}
+
+Then for $z \cdot \overline{z}$, we have:
+
+\begin{align*}
+    z \cdot \overline{z} &= r (\cos \theta + i\sin \theta) \cdot r (\cos \theta - i\sin \theta) \\
+    &= (r \cos \theta  + r i\sin \theta) \cdot (r \cos \theta  - r i\sin \theta) \\
+    &= r^2 (\cos \theta)^2 - r^2 \cos \theta i \sin \theta + r^2 i \sin \theta \cos \theta - r^2 (i \sin \theta)^2 \\
+    &= r^2 (\cos \theta)^2 +  r^2 (\sin \theta)^2 \\
+    &= r^2
+\end{align*}
+
+As there is no imaginary part in the resultant equation, and as $r^2 = (a^2 + b^2)$ is always $\geq 0$, we may conclude that $z \cdot \overline{z}$ must be a real number greater than or equal to zero
+
+\end{document}
+
