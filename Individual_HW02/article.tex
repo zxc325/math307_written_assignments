@@ -1,0 +1,87 @@
+\documentclass[11pt]{article}
+\usepackage{setspace}
+\setstretch{1}
+\usepackage{amsmath,amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage[hang, flushmargin]{footmisc}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage[nameinlink]{cleveref}
+\usepackage{footnotebackref}
+\usepackage{url}
+\usepackage{listings}
+\usepackage[most]{tcolorbox}
+\usepackage{inconsolata}
+\usepackage[papersize={8.5in,11in}, margin=1in]{geometry}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{esint}
+\usepackage{url}
+\usepackage{enumitem}
+\usepackage{subfig}
+\usepackage{wasysym}
+\newcommand{\ilc}{\texttt}
+\usepackage{etoolbox}
+\usepackage{algorithm}
+\usepackage{changepage}
+% \usepackage{algorithmic}
+\usepackage[noend]{algpseudocode}
+\usepackage{tikz}
+\usetikzlibrary{matrix,positioning,arrows.meta,arrows}
+\patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
+% \PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
+
+\providecommand{\myceil}[1]{\left \lceil #1 \right \rceil }
+\providecommand{\myfloor}[1]{\left \lfloor #1 \right \rfloor }
+
+
+\begin{document}
+
+
+
+\title{\textbf{MATH 307: Individual Homework 2}}
+
+
+\author{
+Shaochen (Henry) ZHONG, \ilc{sxz517@case.edu}}
+
+\date{Due and submitted on 02/10/2021 \\ Spring 2021, Dr. Guo}
+\maketitle
+
+
+
+
+\subsection*{Problem 1}
+\textit{Prove that $Q(x)$, the set of all polynomials with rational coefficients with the regular polynomial multiplication and addition is a ring.}\newline
+
+\noindent For the simplicity of discussion, let's assume we have $f, g, k \in Q(x)$ with $f = a_0 + a_1 x + a_2 x^2 + ... + a_m x^m$, $g = b_0 + b_1 x + b_2 x^2 + ... + b_n x^n$, and $k = c_0 + c_1 x + c_2 x^2 + ... + c_j x^j$.
+
+\noindent We have $(Q(x), +, 0)$ to be an Abelian group as:
+\begin{itemize}
+    \item It is a closure as for $f + g = a_0 + b_0 + a_1 x + b_1 x + ... + a_m x^m + b_n x^n$ is also a polynomial with rational coefficient and therefore also $\in Q(x)$.
+    \item It shows associativity as for $f, g, k \in Q(x)$, $f + (g + k) = (f + g) + k$.
+    \item It has the (additive) identity of $0$ for $f + 0 = f$.
+    \item It has the inverse of $-f$ as $f + (-f) = 0$.
+    \item It also shows commutativity with $f + g = g + f$.
+\end{itemize}
+
+
+\noindent On the other hand we have $(Q(x), \times, 1)$ to be a monoid as:
+
+\begin{itemize}
+    \item It is a closure as we have $f \cdot g = a_0 b_0 + a_1 b_1 x^2 + ... + a_m b_n x^{mn}$ to be a polynomial with rational coefficient and therefore also $\in Q(x)$.
+    \item It shows associativity as for $f, g, k \in Q(x)$, $f \cdot (g \cdot k) = (f \cdot g) \cdot k$.
+    \item It has the (multiplicative) identity of $1$ for $f \cdot 1 = f$.
+\end{itemize}
+
+Now to check the distributive property, for $f \cdot (g + h)$ we have $a_0 b_0 + a_1 b_1 x^2 + ... + a_m b_n x^{mn} + a_0 c_0 + a_1 c_1 x^2 + ... + a_m c_j x^{mj} = (f \cdot g) + (f \cdot h)$. So the distributive property is proven and $(Q(x), +, \times)$ is therefore a ring.
+
+
+
+\subsection*{Problem 2}
+\textit{Is $\mathbb{Z}$, the set of integers with the usual addition and multiplication, a field? Justify your answer.}\newline
+
+$(\mathbb{Z}, +, \times)$ is not a field. First it is clear that $(\mathbb{Z}, +, 0)$ is supposed to be the Abelian group and $(\mathbb{Z}, \times, 1)$ is supposed to be the commutative monoid -- as we can't have a multiplicative inverse for every integers $\in \mathbb{Z}$. Which implies for $(\mathbb{Z}, +, \times)$ to be a field, it is required that every element in $\mathbb{Z}$ which is not the additive inverse ($0$) to have an inverse with respect to $\times$. But the only multiplicative inverse that are $\in \mathbb{Z}$ are $-1$ and $ 1$. Say if we have $2$, which is an integer that is not $0$, but we can't have its multiplicative inverse $\frac{1}{2}$ to be $\in \mathbb{Z}$. Thus, $(\mathbb{Z}, +, \times)$ is not a field.
+
+\end{document}
+
