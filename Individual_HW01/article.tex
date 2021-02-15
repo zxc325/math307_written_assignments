@@ -1,0 +1,75 @@
+\documentclass[11pt]{article}
+\usepackage{setspace}
+\setstretch{1}
+\usepackage{amsmath,amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage[hang, flushmargin]{footmisc}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage[nameinlink]{cleveref}
+\usepackage{footnotebackref}
+\usepackage{url}
+\usepackage{listings}
+\usepackage[most]{tcolorbox}
+\usepackage{inconsolata}
+\usepackage[papersize={8.5in,11in}, margin=1in]{geometry}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{esint}
+\usepackage{url}
+\usepackage{enumitem}
+\usepackage{subfig}
+\usepackage{wasysym}
+\newcommand{\ilc}{\texttt}
+\usepackage{etoolbox}
+\usepackage{algorithm}
+\usepackage{changepage}
+% \usepackage{algorithmic}
+\usepackage[noend]{algpseudocode}
+\usepackage{tikz}
+\usetikzlibrary{matrix,positioning,arrows.meta,arrows}
+\patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
+% \PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
+
+\providecommand{\myceil}[1]{\left \lceil #1 \right \rceil }
+\providecommand{\myfloor}[1]{\left \lfloor #1 \right \rfloor }
+
+
+\begin{document}
+
+
+
+\title{\textbf{MATH 307: Individual Homework 1}}
+
+
+\author{
+Shaochen (Henry) ZHONG, \ilc{sxz517@case.edu}}
+
+\date{Due and submitted on 02/08/2021 \\ Spring 2021, Dr. Guo}
+\maketitle
+
+
+
+\section*{Section 2.4}
+\subsection*{Problem 1}
+\subsubsection*{(a)}
+It is a monoid as it has the properties of \textit{closure} for each $a, b \in A$ we have $a + b \in A$, \textit{associativity} for $a, b, c \in A$ we have $a + (b + c) = (a + b) + c$, and \textit{identity} for $e = 0$.
+
+\subsubsection*{(b)}
+It is not a group as for any $a, b \in A$ and either of $a,b \neq 0$, we can't have $a + b = b + a = e = 0$.
+
+\subsubsection*{(c)}
+As we have checked above that $\{+, \mathbb{N}, 0\}$ is not a group, it is also not an Abelian group.
+
+\subsection*{Problem 2}
+
+$\{+, \mathbb{Z}, 0\}$ is an Abelian group as it has the properties of \textit{closure} for each $a, b \in A$ we have $a + b \in A$, \textit{associativity} for $a, b, c \in A$ we have $a + (b + c) = (a + b) + c$, and \textit{identity} for $e = 0$.
+
+It also has \textit{inverse} for all $x \in A$ as $-x$, where $-x$ is also $\in A$ and $x + (-x) = 0 = e$. And it certainly shows \textit{commutativity} property with $a + b = b + a$ for all  $a, b \in A$.\newline
+
+\noindent However, $\{\times, \mathbb{Z}, 1\}$ is only a monoid as it has the properties of \textit{closure} for each $a, b \in A$ we have $a \times b \in A$, \textit{associativity} for $a, b, c \in A$ we have $a \times (b \times c) = (a \times b) \times c$, and  \textit{identity} for $e = 1$. But
+we can't say it is a group as we might have something $a = 2$ where the \textit{inverse} is $\frac{1}{2}$ which is $\not\in \mathbb{Z}$.
+
+
+\end{document}
+
