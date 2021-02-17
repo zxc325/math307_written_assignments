@@ -1,0 +1,98 @@
+\documentclass[11pt]{article}
+\usepackage{setspace}
+\setstretch{1}
+\usepackage{amsmath,amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage[hang, flushmargin]{footmisc}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage[nameinlink]{cleveref}
+\usepackage{footnotebackref}
+\usepackage{url}
+\usepackage{listings}
+\usepackage[most]{tcolorbox}
+\usepackage{inconsolata}
+\usepackage[papersize={8.5in,11in}, margin=1in]{geometry}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{esint}
+\usepackage{url}
+\usepackage{enumitem}
+\usepackage{subfig}
+\usepackage{wasysym}
+\newcommand{\ilc}{\texttt}
+\usepackage{etoolbox}
+\usepackage{algorithm}
+\usepackage{changepage}
+% \usepackage{algorithmic}
+\usepackage[noend]{algpseudocode}
+\usepackage{tikz}
+\usetikzlibrary{matrix,positioning,arrows.meta,arrows}
+\patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
+% \PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
+
+\providecommand{\myceil}[1]{\left \lceil #1 \right \rceil }
+\providecommand{\myfloor}[1]{\left \lfloor #1 \right \rfloor }
+
+
+\begin{document}
+
+
+
+\title{\textbf{MATH 307: Individual Homework 4}}
+
+
+\author{Shaochen (Henry) ZHONG, \ilc{sxz517@case.edu}}
+
+\date{Due and submitted on 02/17/2021 \\ Spring 2021, Dr. Guo}
+\maketitle
+
+\subsection*{Problem 1}
+\textit{Textbook page 40, problem 1.}\newline
+
+For $W$ to be a vector space, we must have $(u + v) \in W$ for $u, v \in W$. However for $u = v = \begin{bmatrix} 2\\ 2\\ 2\\ \end{bmatrix}$, we have $(u + v) = \begin{bmatrix} 4\\ 4\\ 4\\ \end{bmatrix}$; which is $\not\in W$ as $|x_j| \not< 3$ for $i \leq j \leq 4$. Thus, we may conclude that $W$ is not a vector space.
+
+
+\subsection*{Problem 2}
+\textit{Textbook page 40, problem 5.}\newline
+
+For $W \in \mathbb{R}^4: x + 20y - 12z - 1 = 0$ for $x, y, z$ as elment of $\mathbb{R}^4$ to be a vector space, we must have a zero vector $0$ where $0 + u = u$ for $u \in W$. In this case the zero vector is $\begin{bmatrix} 4\\ 4\\ 4\\ 4\\ \end{bmatrix}$ but it is not in $W$. Thus, we may conclude that $W$ is not a vector space.
+
+
+\subsection*{Problem 3}
+\textit{See HW instruction.}\newline
+
+For matrix $M, N, U \in A \in F^{n \times n}$, we know that the $tr(m) = tr(n) = 0$. Since the trace of a matrix is only about its diagonal elements, lets assume we have the $tr(M) = M_{11} + M_{22} + ... +  M_{nn} = 0$, $tr(N) = N_{11} + N_{22} + ... +  N_{nn} = 0$, and same for $tr(U)$; where the subscript is the index of element. Also assume we have scalar $\lambda, \mu \in F$, We have:
+
+\begin{enumerate}
+    \item $M + N \in A$ as $tr(M + N) = (M_{11} + N_{11}) + (M_{22} + N_{22}) +  ... + (M_{nn} + N_{nn}) = 0$.
+    \item $M + N = N + M = \begin{bmatrix}
+        M_{11} + N_{11} & M_{12} + N_{12} & \cdots &M_{1n} + N_{1n} \\
+        M_{21} + N_{21} & M_{22} + N_{22} & \cdots &M_{2n} + N_{2n} \\
+        \vdots & \vdots & \ddots & \vdots \\
+        M_{n1} + N_{n1} & M_{n2} + N_{n2} & \cdots &M_{nn} + N_{nn} \\
+    \end{bmatrix}$
+    \item $U + (M + N) = (U + M) + N = \begin{bmatrix}
+        M_{11} + N_{11}+ U_{11} & M_{12} + N_{12}+ U_{12} & \cdots & M_{1n} + N_{1n}+ U_{1n} \\
+        M_{21} + N_{21} + U_{21} & M_{22} + N_{22} + U_{22} & \cdots&  M_{2n} + N_{2n} + U_{2n} \\
+        \vdots & \vdots & \ddots & \vdots \\
+        M_{n1} + N_{n1}+U_{n1} & M_{n2} + N_{n2}+U_{n2} & \cdots & M_{nn} + N_{nn}+U_{nn} \\
+    \end{bmatrix}$
+    \item $0 \in A$ where $0 + M = M$. We know this is true as as each element on $ij$ index in LHS is $M_{ij}$ which is equals to the $ij$-indexed element in RHS.
+    \item $\forall M \in A$, we have $M + -M = 0$ where the element on $ij$ index in $-M$ is simply $-1 \cdot M_{ij}$, so we must have $M_{ij} + (-M_{ij}) = 0$ and therefore $M + -M = 0$.
+    \item $\lambda M \in A$ as the element on $ij$ index in $\lambda M$ is simply $\lambda \cdot M_{ij}$ which is still in $\mathbb{R}$, we have $M \in A \in F^{n \times n}$.
+    \item $\lambda (M + N) = \lambda M + \lambda N$ as each element on $ij$ index in LHS is $\lambda(M_{ij} + N_{ij}) = \lambda M_{ij} + \lambda N_{ij}$, which is equals to the $ij$-indexed element in RHS.
+    \item $(\lambda + \mu) M = \lambda M + \mu M$ as each element on $ij$ index in LHS is $(\lambda + \mu) M_{ij} =\lambda M_{ij} + \mu M_{ij}$, which is equals to the $ij$-indexed element in RHS.
+    \item $\lambda (\mu M) = (\lambda \mu) M)$ as each element on $ij$ index in LHS is $\lambda \cdot \mu \cdot  M_{ij}$ which is equals to the $ij$-indexed element in RHS.
+    \item $1 \cdot M = M$  as each element on $ij$ index in LHS is $1 \cdot M_{ij}$ which is equals to the $ij$-indexed element in RHS.
+\end{enumerate}\newline
+
+As all ten axiom is proven to be valid, we may conclude that $F^{n \times n}$ is vector field over $F$.
+
+
+
+
+
+
+\end{document}
+
