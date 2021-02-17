@@ -62,32 +62,41 @@ For $W \in \mathbb{R}^3: x + 20y - 12z - 1 = 0$ for $x, y, z$ as elements of $W$
 \subsection*{Problem 3}
 \textit{See HW instruction.}\newline
 
-For matrices $M, N, U \in F^{n \times n}$, we know that $tr(M) = tr(N) = tr(U) = 0$. Since the trace of a matrix is only about its diagonal elements, lets assume we have the $tr(M) = M_{11} + M_{22} + ... +  M_{nn} = 0$, $tr(N) = N_{11} + N_{22} + ... +  N_{nn} = 0$, and same for $tr(U)$; where the subscript is the index of element. Also assume we have scalar $\lambda, \mu \in F$, We have:
+For matrices $M, N \in A$, we know that $tr(M) = tr(N) = 0$. Since the trace of a matrix is only about its diagonal elements, lets assume we have the $tr(M) = M_{11} + M_{22} + ... +  M_{nn} = 0$ and $tr(N) = N_{11} + N_{22} + ... +  N_{nn} = 0$ (where the subscript is the index of element). Also assume we have scalar $\lambda \in F$. Since we already know that $F^{n \times n}$ is a vector space over $F$, we have:
 
 \begin{enumerate}
-    \item $M + N \in  F^{n \times n}$ as $tr(M + N) = (M_{11} + N_{11}) + (M_{22} + N_{22}) +  ... + (M_{nn} + N_{nn}) = 0$.
-    \item $M + N = N + M = \begin{bmatrix}
-        M_{11} + N_{11} & M_{12} + N_{12} & \cdots &M_{1n} + N_{1n} \\
-        M_{21} + N_{21} & M_{22} + N_{22} & \cdots &M_{2n} + N_{2n} \\
-        \vdots & \vdots & \ddots & \vdots \\
-        M_{n1} + N_{n1} & M_{n2} + N_{n2} & \cdots &M_{nn} + N_{nn} \\
-    \end{bmatrix}$
-    \item $U + (M + N) = (U + M) + N = \begin{bmatrix}
-        M_{11} + N_{11}+ U_{11} & M_{12} + N_{12}+ U_{12} & \cdots & M_{1n} + N_{1n}+ U_{1n} \\
-        M_{21} + N_{21} + U_{21} & M_{22} + N_{22} + U_{22} & \cdots&  M_{2n} + N_{2n} + U_{2n} \\
-        \vdots & \vdots & \ddots & \vdots \\
-        M_{n1} + N_{n1}+U_{n1} & M_{n2} + N_{n2}+U_{n2} & \cdots & M_{nn} + N_{nn}+U_{nn} \\
-    \end{bmatrix}$
-    \item $0 \in  F^{n \times n}$ where $0 + M = M$. We know this is true as as the element on $ij$ index on LHS is $M_{ij}$ which is equals to the $ij$-indexed element on RHS. We also know that a $n \times n$ matrix filled with $0$s is $\in  F^{n \times n}$.
-    \item $\forall M \in F^{n \times n}$, we have $M + -M = 0$ where the element on $ij$ index in $-M$ is simply $-1 \cdot M_{ij}$, so we must have $M_{ij} + (-M_{ij}) = 0$ and therefore $M + -M = 0$.
-    \item $\lambda M \in F^{n \times n}$ as the element on $ij$ index in $\lambda M$ is simply $\lambda \cdot M_{ij}$ which is still in $F$, we then have $\lambda M  \in F^{n \times n}$.
-    \item $\lambda (M + N) = \lambda M + \lambda N$ as the element on $ij$ index on LHS is $\lambda(M_{ij} + N_{ij}) = \lambda M_{ij} + \lambda N_{ij}$, which is equals to the $ij$-indexed element on RHS.
-    \item $(\lambda + \mu) M = \lambda M + \mu M$ as the element on $ij$ index on LHS is $(\lambda + \mu) M_{ij} =\lambda M_{ij} + \mu M_{ij}$, which is equals to the $ij$-indexed element on RHS.
-    \item $\lambda (\mu M) = (\lambda \mu) M$ as the element on $ij$ index on LHS is $\lambda \cdot \mu \cdot  M_{ij}$ which is equals to the $ij$-indexed element on RHS.
-    \item $1 \cdot M = M$  as the element on $ij$ index on LHS is $1 \cdot M_{ij}$ which is equals to the $ij$-indexed element on RHS.
+    \item $M + N \in A$ as $tr(M + N) = (M_{11} + N_{11}) + (M_{22} + N_{22}) +  ... + (M_{nn} + N_{nn}) = 0$.
+    \item $\lambda M \in A$ as $tr(\lambda M) = \lambda (M_{11} + M_{22} + ... +  M_{nn}) = 0$.
+    \item Zero vector $0 \in A$ as $tr(0) = 0 + 0 + ... + 0 = 0$.
 \end{enumerate}
 
-As all ten axioms are proven to be valid, we may conclude that $F^{n \times n}$ is vector field over $F$.
+Thus, we may conclude that $A$ is a subspace of $F^{n \times n}$ over $F$.
+
+%
+% \begin{enumerate}
+%     \item $M + N \in  F^{n \times n}$ as $tr(M + N) = (M_{11} + N_{11}) + (M_{22} + N_{22}) +  ... + (M_{nn} + N_{nn}) = 0$.
+%     \item $M + N = N + M = \begin{bmatrix}
+%         M_{11} + N_{11} & M_{12} + N_{12} & \cdots &M_{1n} + N_{1n} \\
+%         M_{21} + N_{21} & M_{22} + N_{22} & \cdots &M_{2n} + N_{2n} \\
+%         \vdots & \vdots & \ddots & \vdots \\
+%         M_{n1} + N_{n1} & M_{n2} + N_{n2} & \cdots &M_{nn} + N_{nn} \\
+%     \end{bmatrix}$
+%     \item $U + (M + N) = (U + M) + N = \begin{bmatrix}
+%         M_{11} + N_{11}+ U_{11} & M_{12} + N_{12}+ U_{12} & \cdots & M_{1n} + N_{1n}+ U_{1n} \\
+%         M_{21} + N_{21} + U_{21} & M_{22} + N_{22} + U_{22} & \cdots&  M_{2n} + N_{2n} + U_{2n} \\
+%         \vdots & \vdots & \ddots & \vdots \\
+%         M_{n1} + N_{n1}+U_{n1} & M_{n2} + N_{n2}+U_{n2} & \cdots & M_{nn} + N_{nn}+U_{nn} \\
+%     \end{bmatrix}$
+%     \item $0 \in  F^{n \times n}$ where $0 + M = M$. We know this is true as as the element on $ij$ index on LHS is $M_{ij}$ which is equals to the $ij$-indexed element on RHS. We also know that a $n \times n$ matrix filled with $0$s is $\in  F^{n \times n}$.
+%     \item $\forall M \in F^{n \times n}$, we have $M + -M = 0$ where the element on $ij$ index in $-M$ is simply $-1 \cdot M_{ij}$, so we must have $M_{ij} + (-M_{ij}) = 0$ and therefore $M + -M = 0$.
+%     \item $\lambda M \in F^{n \times n}$ as the element on $ij$ index in $\lambda M$ is simply $\lambda \cdot M_{ij}$ which is still in $F$, we then have $\lambda M  \in F^{n \times n}$.
+%     \item $\lambda (M + N) = \lambda M + \lambda N$ as the element on $ij$ index on LHS is $\lambda(M_{ij} + N_{ij}) = \lambda M_{ij} + \lambda N_{ij}$, which is equals to the $ij$-indexed element on RHS.
+%     \item $(\lambda + \mu) M = \lambda M + \mu M$ as the element on $ij$ index on LHS is $(\lambda + \mu) M_{ij} =\lambda M_{ij} + \mu M_{ij}$, which is equals to the $ij$-indexed element on RHS.
+%     \item $\lambda (\mu M) = (\lambda \mu) M$ as the element on $ij$ index on LHS is $\lambda \cdot \mu \cdot  M_{ij}$ which is equals to the $ij$-indexed element on RHS.
+%     \item $1 \cdot M = M$  as the element on $ij$ index on LHS is $1 \cdot M_{ij}$ which is equals to the $ij$-indexed element on RHS.
+% \end{enumerate}
+
+% As all ten axioms are proven to be valid, we may conclude that $F^{n \times n}$ is vector field over $F$.
 
 
 
