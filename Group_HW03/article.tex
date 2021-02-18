@@ -1,0 +1,76 @@
+\documentclass[11pt]{article}
+\usepackage{setspace}
+\setstretch{1}
+\usepackage{amsmath,amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage[hang, flushmargin]{footmisc}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage[nameinlink]{cleveref}
+\usepackage{footnotebackref}
+\usepackage{url}
+\usepackage{listings}
+\usepackage[most]{tcolorbox}
+\usepackage{inconsolata}
+\usepackage[papersize={8.5in,11in}, margin=1in]{geometry}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{esint}
+\usepackage{url}
+\usepackage{enumitem}
+\usepackage{subfig}
+\usepackage{wasysym}
+\newcommand{\ilc}{\texttt}
+\usepackage{etoolbox}
+\usepackage{algorithm}
+\usepackage{changepage}
+% \usepackage{algorithmic}
+\usepackage[noend]{algpseudocode}
+\usepackage{tikz}
+\usetikzlibrary{matrix,positioning,arrows.meta,arrows}
+\patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
+% \PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
+
+\providecommand{\myceil}[1]{\left \lceil #1 \right \rceil }
+\providecommand{\myfloor}[1]{\left \lfloor #1 \right \rfloor }
+
+
+\begin{document}
+
+
+\title{\textbf{MATH 307: Group Homework 3}}
+
+
+\author{\textit{Group 8}\\
+Shaochen (Henry) ZHONG, Zhitao (Robert) CHEN, John MAYS, Huaijin XIN\\ \ilc{\{sxz517, zxc325, jkm100, hxx200\}@case.edu}}
+
+\date{Due and submitted on 02/19/2021 \\ Spring 2021, Dr. Guo}
+\maketitle
+
+
+
+\section*{Problem 1}
+
+For $u = \begin{pmatrix} 1 \\ 2\end{pmatrix}$, $v = \begin{pmatrix} 1 \\ 1\end{pmatrix}$, and $w = \begin{pmatrix} -1 \\ 0\end{pmatrix}$. We may obtain $ \begin{pmatrix} 1 \\ 0 \end{pmatrix} = -w$ and $\begin{pmatrix} 0 \\ 1\end{pmatrix} = v + w$. So for any arbitrary $\begin{pmatrix} x \\ y\end{pmatrix} \in \mathbb{R}^2$ we have:
+
+\begin{align*}
+    \begin{pmatrix} x \\ y\end{pmatrix} &= y u + (y-x) w \\
+    &= y \begin{pmatrix} 1 \\ 1\end{pmatrix} + (y-x)\begin{pmatrix} -1 \\ 0\end{pmatrix}
+\end{align*}
+
+Thus, we have $span(u, v, w) \subset \mathbb{R}$.
+
+For any arbitrary vector $d \in span(u, v, w)$, we have:
+
+\begin{align*}
+    d &= \lambda_1 u + \lambda_2 v + \lambda_3 w \\
+    &= \begin{pmatrix}
+        \lambda_1 + \lambda_2 - \lambda_3 \\
+        2\lambda_1 + \lambda_2\\
+    \end{pmatrix}
+\end{align*}
+
+where $d \in \mathbb{R}^2$, thus we have $\mathbb{R} \subset span(u, v, w)$ and therefore $\mathbb{R} = span(u, v, w)$
+
+\end{document}
+
