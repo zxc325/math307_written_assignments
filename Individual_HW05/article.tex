@@ -1,0 +1,142 @@
+\documentclass[11pt]{article}
+\usepackage{setspace}
+\setstretch{1}
+\usepackage{amsmath,amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage[hang, flushmargin]{footmisc}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage[nameinlink]{cleveref}
+\usepackage{footnotebackref}
+\usepackage{url}
+\usepackage{listings}
+\usepackage[most]{tcolorbox}
+\usepackage{inconsolata}
+\usepackage[papersize={8.5in,11in}, margin=1in]{geometry}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{esint}
+\usepackage{url}
+\usepackage{enumitem}
+\usepackage{subfig}
+\usepackage{wasysym}
+\newcommand{\ilc}{\texttt}
+\usepackage{etoolbox}
+\usepackage{algorithm}
+\usepackage{changepage}
+% \usepackage{algorithmic}
+\usepackage[noend]{algpseudocode}
+\usepackage{tikz}
+\usetikzlibrary{matrix,positioning,arrows.meta,arrows}
+\patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
+% \PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
+
+\providecommand{\myceil}[1]{\left \lceil #1 \right \rceil }
+\providecommand{\myfloor}[1]{\left \lfloor #1 \right \rfloor }
+\providecommand{\qbm}[1]{\begin{bmatrix} #1 \end{bmatrix}}
+\providecommand{\qpm}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+
+\begin{document}
+
+
+
+\title{\textbf{MATH 307: Individual Homework 5}}
+
+
+\author{Shaochen (Henry) ZHONG, \ilc{sxz517@case.edu}}
+
+\date{Due and submitted on 02/22/2021 \\ Spring 2021, Dr. Guo}
+\maketitle
+
+\subsection*{Problem 1}
+\textit{See HW instruction.}\newline
+
+\subsubsection*{(a)}
+
+We know the purposed set is linearly independent as each of element of the set has a different power of $x$, and we can't raise or lower the power of $x$ with scalar multiplications.
+
+However the purposed set is not a spanning set of $P^4$ as we cannot represent $x^4$.
+
+We may confirm this answer knowing that $P^4$ admits a finite basis of $5$ vectors along the line of $\{x^0, x, x^2, x^3, x^4 \}$; the purposed set only has $4$ vectors and is therefore not a basis for $P^4$.
+
+\subsubsection*{(b)}
+
+Again, we know the purposed set is linearly independent as each of element of the set has a different (highest) power of $x$. It is also a spanning set as we have:
+
+\begin{align*}
+    1 &= 1 \\
+    x &= (1 + x) - 1 \\
+    x^2 &= (1 + x + x^2) -  (1 + x) \\
+    x^3 &= (x^2 + x^3) - x^2 \\
+    x^4 &= -(x^3 - x^4) + x^3
+\end{align*}
+
+Then $\forall p \in P^4 = a + bx + cx^2 + dx^3 + ex^4$ we simply times $a, b, c, d \in \mathbb{R}$ to each of the above listed element respectively we may have a representation of $p$.
+
+We may confirm this answer knowing that $P^4$ admits a finite basis of $5$ vectors; and $5$ vectors are provided in the purposed set.
+
+\subsubsection*{(c)}
+
+Again, we know the purposed set is linearly independent as each of element of the set has a different (highest) power of $x$. It is also a spanning set as we have:
+
+\begin{align*}
+    1 &= -(-1) \\
+    x &= x \\
+    x^2 &= -(-x^2) \\
+    x^3 &= x^3 \\
+    x^4 &= -(-x^4)
+\end{align*}
+
+Then $\forall p \in P^4 = a + bx + cx^2 + dx^3 + ex^4$ we simply times $a, b, c, d \in \mathbb{R}$ to each of the above listed element respectively we may have a representation of $p$.
+
+We may confirm this answer knowing that $P^4$ admits a finite basis of $5$ vectors; and $5$ vectors are provided in the purposed set.
+
+\subsubsection*{(d)}
+
+The purposed set is not linearly independent as we may have:
+\begin{equation*}
+    x^2 - 5 = (x^2 - x) + (x + 10) - 3(5)
+\end{equation*}
+
+and it is therefor also not a basis for $P^4$.
+
+We may confirm this answer knowing that $P^4$ admits a finite basis of $5$ vectors along the line of $\{x^0, x, x^2, x^3, x^4 \}$; the purposed set only has $6$ vectors and is therefore not a basis for $P^4$.
+
+\subsection*{Problem 2}
+\textit{Textbook page 40, problem 6.}\newline
+
+\textbf{No.} Assume we have the basis of $R^4$ being $\{v_1, v_2, v_3, v_4\}$ since knowing its dimension; and the supposely the 5 linearly independent vectors are $\{w_1, w_2, w_3, w_4, w_5 \}$. By the \textsc{Exchange Therome} we know that we may swap a $v \in \{v_1, v_2, v_3, v_4\}$ with a $w \in \{w_1, w_2, w_3, w_4, w_5 \}$ by doing the following the following four times (example showed for swapping $v_1$ for $w_1$):
+
+\begin{align*}
+    w_1 &= a_1 v_1 + a_2 v_2 + a_3 v_3 + a_4 v_4 \\
+    \text{Assume}& \ a_1 \neq 0
+    v_1 = a^{-1}_1 (w_1 - a_2 v_2 - a_3 v_3 - a_4 v_4) \\
+    v_1 \in span(w_1, v_2, v_3, v_4)
+\end{align*}
+
+Then we got $\{w_1, w_2, w_3, w_4\}$ to be a span of $\mathbb{R}^4$ and $w_5$, as it is also $\in \mathbb{R}^4$, must be linearly dependent to  $\{w_1, w_2, w_3, w_4\}$.
+
+
+
+
+\subsection*{Problem 3}
+\textit{Textbook page 40, problem 7.}\newline
+
+\textbf{Yes.} as $\mathbb{R}^6$ has a dimension of $6$, it must has a 6-vector basis where any $5$ of them will be linearly independent. A simple example will be:
+
+\begin{equation*}
+    \Big \{ \qbm{1 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0}, \qbm{0 \\ 1 \\ 0 \\ 0 \\ 0 \\ 0}, \qbm{0 \\ 0 \\ 1 \\ 0 \\ 0 \\ 0}, \qbm{0 \\ 0 \\ 0 \\ 1 \\ 0 \\ 0}, \qbm{0 \\ 0 \\ 0 \\ 0 \\ 1 \\ 0} \Big \}
+\end{equation*}
+
+
+
+
+\subsection*{Problem 4}
+\textit{See HW instruction.}\newline
+
+The dimension of $\mathbb{C}^{3 \times 2}$ is $6$ as it will need a 6-vector basis: $e_{11}, e_{12}, e_{21}, ... , e_{32}$ so for any $a + bi$ on any of the $ij$-th index, we may represent it with $a \cdot e_{ij} + bi \cdot e_{ij}$.
+
+The proposed set is not a basis of $\mathbb{C}^{3 \times 2}$ because the last element $e_{32} - e_{11}$ is not linearly independent to the othere while $e_{32}$ and $e_{11}$ is individually included in such set. Also basis of a vector space is an invariant equals to the vector space's dimension -- in this case it shuold be $6$ -- but the proposed set got $7$ vectors.
+
+\end{document}
+
