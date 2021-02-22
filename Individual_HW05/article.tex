@@ -73,7 +73,7 @@ Again, we know the purposed set is linearly independent as each of element of th
 
 Then $\forall p \in P^4 = a + bx + cx^2 + dx^3 + ex^4$ we simply times $a, b, c, d \in \mathbb{R}$ to each of the above listed element respectively we may have a representation of $p$.
 
-We may confirm this answer knowing that $P^4$ admits a finite basis of $5$ vectors; and $5$ vectors are provided in the purposed set.
+We may confirm this answer knowing that $P^4$ admits a finite basis of $5$ vectors; as $5$ linearly independent vectors are provided in the purposed set it is a basis of $P^4$
 
 \subsubsection*{(c)}
 
@@ -89,7 +89,7 @@ Again, we know the purposed set is linearly independent as each of element of th
 
 Then $\forall p \in P^4 = a + bx + cx^2 + dx^3 + ex^4$ we simply times $a, b, c, d \in \mathbb{R}$ to each of the above listed element respectively we may have a representation of $p$.
 
-We may confirm this answer knowing that $P^4$ admits a finite basis of $5$ vectors; and $5$ vectors are provided in the purposed set.
+We may confirm this answer knowing that $P^4$ admits a finite basis of $5$ vectors; as $5$ linearly independent vectors are provided in the purposed set it is a basis of $P^4$.
 
 \subsubsection*{(d)}
 
@@ -109,9 +109,9 @@ We may confirm this answer knowing that $P^4$ admits a finite basis of $5$ vecto
 
 \begin{align*}
     w_1 &= a_1 v_1 + a_2 v_2 + a_3 v_3 + a_4 v_4 \\
-    \text{Assume}& \ a_1 \neq 0
-    v_1 = a^{-1}_1 (w_1 - a_2 v_2 - a_3 v_3 - a_4 v_4) \\
-    v_1 \in span(w_1, v_2, v_3, v_4)
+    &\text{Assume} \ a_1 \neq 0 \\
+    v_1 &= a^{-1}_1 (w_1 - a_2 v_2 - a_3 v_3 - a_4 v_4) \\
+    v_1 &\in span(w_1, v_2, v_3, v_4)
 \end{align*}
 
 Then we got $\{w_1, w_2, w_3, w_4\}$ to be a span of $\mathbb{R}^4$ and $w_5$, as it is also $\in \mathbb{R}^4$, must be linearly dependent to  $\{w_1, w_2, w_3, w_4\}$.
@@ -136,7 +136,7 @@ Then we got $\{w_1, w_2, w_3, w_4\}$ to be a span of $\mathbb{R}^4$ and $w_5$, a
 
 The dimension of $\mathbb{C}^{3 \times 2}$ is $6$ as it will need a 6-vector basis: $e_{11}, e_{12}, e_{21}, ... , e_{32}$ so for any $a + bi$ on any of the $ij$-th index, we may represent it with $a \cdot e_{ij} + bi \cdot e_{ij}$.
 
-The proposed set is not a basis of $\mathbb{C}^{3 \times 2}$ because the last element $e_{32} - e_{11}$ is not linearly independent to the othere while $e_{32}$ and $e_{11}$ is individually included in such set. Also basis of a vector space is an invariant equals to the vector space's dimension -- in this case it shuold be $6$ -- but the proposed set got $7$ vectors.
+The proposed set is not a basis of $\mathbb{C}^{3 \times 2}$ because the last element $e_{32} - e_{11}$ is not linearly independent to the others while $e_{32}$ and $e_{11}$ are individually included in such set. Also basis of a vector space is an invariant equals to the vector space's dimension -- in this case it shuold be $6$ -- but the proposed set got $7$ vectors.
 
 \end{document}
 
