@@ -1,0 +1,102 @@
+\documentclass[11pt]{article}
+\usepackage{setspace}
+\setstretch{1}
+\usepackage{amsmath,amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage[hang, flushmargin]{footmisc}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage[nameinlink]{cleveref}
+\usepackage{footnotebackref}
+\usepackage{url}
+\usepackage{listings}
+\usepackage[most]{tcolorbox}
+\usepackage{inconsolata}
+\usepackage[papersize={8.5in,11in}, margin=1in]{geometry}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{esint}
+\usepackage{url}
+\usepackage{enumitem}
+\usepackage{subfig}
+\usepackage{wasysym}
+\newcommand{\ilc}{\texttt}
+\usepackage{etoolbox}
+\usepackage{algorithm}
+\usepackage{changepage}
+% \usepackage{algorithmic}
+\usepackage[noend]{algpseudocode}
+\usepackage{tikz}
+\usetikzlibrary{matrix,positioning,arrows.meta,arrows}
+\patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
+% \PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
+
+\providecommand{\myceil}[1]{\left \lceil #1 \right \rceil }
+\providecommand{\myfloor}[1]{\left \lfloor #1 \right \rfloor }
+\providecommand{\qbm}[1]{\begin{bmatrix} #1 \end{bmatrix}}
+\providecommand{\qpm}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+\providecommand{\norm}[1]{\left\lVert #1 \right\rVert}
+
+\begin{document}
+
+
+\title{\textbf{MATH 307: Group Homework 4}}
+
+
+\author{\textit{Group 8}\\
+Shaochen (Henry) ZHONG, Zhitao (Robert) CHEN, John MAYS, Huaijin XIN\\ \ilc{\{sxz517, zxc325, jkm100, hxx200\}@case.edu}}
+
+\date{Due and submitted on 02/26/2021 \\ Spring 2021, Dr. Guo}
+\maketitle
+
+
+
+\section*{Problem 1}
+\textit{Textbook page 42, problem 22.}\newline
+
+Since we know that $\norm{x} = \sqrt{<x, x>}$. For $x, y \in V$ we may have:
+
+\begin{align*}
+    \norm{x + y}^2 &= <x + y, x + y> \\
+    &= <x, x> + <x, y> + <y, x> + <y, y> \\
+    &= \norm{x}^2 + 2<x, y> + \norm{y}^2 \\
+    \norm{x - y}^2 &= <x - y, x - y> \\
+    &= <x, x> + (-<x, y>) + (-<y, x>) + <y, y> \\
+    &= \norm{x}^2 - 2<x, y> + \norm{y}^2 \\
+    \Longrightarrow& \norm{x + y}^2 + \norm{x - y}^2 = 2\norm{x}^2 + 2\norm{y}^2
+\end{align*}
+
+The equality-in-question is therefore shown.
+
+\section*{Problem 2}
+\textit{See HW instruction.}\newline
+
+Known from the above problem, we have:
+
+\begin{align*}
+    \norm{x + y}^2 + \norm{x - y}^2 &= \norm{x}^2 + 2<x, y> + \norm{y}^2  - (\norm{x}^2 - 2<x, y> + \norm{y}^2) \\
+    &= 4<x, y> \\
+    \Longrightarrow <x, y> &= \frac{1}{4}(\norm{x + y}^2 + \norm{x - y}^2)
+\end{align*}
+
+The equality-in-question is therefore shown.
+
+\section*{Problem 3}
+\textit{See HW instruction.}\newline
+
+Known from the above two problem, we have:
+\begin{align*}
+    \norm{u + v}^2 &= <u + v, u + v> \\
+    &= \norm{u}^2 + 2<u, v> + \norm{v}^2 = 7^2 \\
+    \norm{u - v}^2 &= <u - v, u - v> \\
+    &= \norm{u}^2 - 2<u, v> + \norm{v}^2 = 3^2 \\
+    \Rightarrow& \ 4<u, v> = 49 - 9 = 40 \\
+    \Longrightarrow& \ <u, v> = 10 \\
+    \Rightarrow& \ 2\norm{u}^2 + 2\norm{v}^2 = 49 + 9 = 58 \\
+    \Longrightarrow& \ \norm{u}^2 + \norm{v}^2 = 29 \\
+\end{align*}
+
+Thus, we have $<u, v> = 10$ and $\norm{u}^2 + \norm{v}^2 = 29$.
+
+\end{document}
+
