@@ -1,0 +1,106 @@
+\documentclass[11pt]{article}
+\usepackage{setspace}
+\setstretch{1}
+\usepackage{amsmath,amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage[hang, flushmargin]{footmisc}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage[nameinlink]{cleveref}
+\usepackage{footnotebackref}
+\usepackage{url}
+\usepackage{listings}
+\usepackage[most]{tcolorbox}
+\usepackage{inconsolata}
+\usepackage[papersize={8.5in,11in}, margin=1in]{geometry}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{esint}
+\usepackage{url}
+\usepackage{enumitem}
+\usepackage{subfig}
+\usepackage{wasysym}
+\newcommand{\ilc}{\texttt}
+\usepackage{etoolbox}
+\usepackage{algorithm}
+\usepackage{changepage}
+% \usepackage{algorithmic}
+\usepackage[noend]{algpseudocode}
+\usepackage{tikz}
+\usetikzlibrary{matrix,positioning,arrows.meta,arrows}
+\patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
+% \PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
+
+\providecommand{\myceil}[1]{\left \lceil #1 \right \rceil }
+\providecommand{\myfloor}[1]{\left \lfloor #1 \right \rfloor }
+\providecommand{\qbm}[1]{\begin{bmatrix} #1 \end{bmatrix}}
+\providecommand{\qpm}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+\providecommand{\norm}[1]{\left\lVert #1 \right\rVert}
+
+\begin{document}
+
+
+
+\title{\textbf{MATH 307: Individual Homework 6}}
+
+
+\author{Shaochen (Henry) ZHONG, \ilc{sxz517@case.edu}}
+
+\date{Due and submitted on 02/24/2021 \\ Spring 2021, Dr. Guo}
+\maketitle
+
+\subsection*{Problem 1}
+\textit{Textbook page 41, problem 14.}\newline
+
+\textbf{No.} It is not an inner product on $\mathbb{C}^4$ as we may have $z = w = i$ where $<\qbm{i \\ i \\ i \\i}, \qbm{i \\ i \\ i \\i}> = i^2 + 2i^2 + 3 i^2 + 4 i^2 = -10 \not\geq 0$, thus the \textit{positivity} property doesn't hold.
+
+\subsection*{Problem 2}
+\textit{Textbook page 41, problem 16.}\newline
+
+It is an inner product as:
+\begin{itemize}
+    \item \textit{Symmetry}: $<x, y> = 10 x_1 y_1 + x_2 y_2 + 3 x_3 y_3 =  10 y_1 x_1 + y_2 x_2 + 3 y_3 x_3 = <y, x>$
+    \item \textit{Positivity}: $<v, v> = 10v_1^2 + v_2^2 + 3 v_3^2 \neq 0$ if $v \neq 0$.
+    \item \textit{Sequlinearity}: $<av + w, z> = 10(au_1 + w_1)z_1 + (au_2 + w_2)z_2 + 3(au_3 + w_3)z_3 = a(10u_1 z_1 + u_2 z_2 + 3 u_3 z_3) + 10w_1 z_1 + w_2 z_2 + 3 w_3 z_3 = a<u, z> + <w, z>$
+\end{itemize}
+
+Now to calculate lenghts, we have:
+
+\begin{align*}
+    \norm{\qbm{1 \\ -1 \\ 2}} &= \sqrt{10(1)^2 + (-1)^2 + 3(2)^2} = \sqrt{23} \\
+    \norm{\qbm{0 \\ 3 \\ -2}} &= \sqrt{10(0)^2 + (3)^2 + 3(-2)^2} = \sqrt{21}
+\end{align*}
+
+And the $\cos$ angle between the two vectors is:
+
+\begin{align*}
+    \cos \theta &= \frac{<\qbm{1 \\ -1 \\ 2}, \qbm{0 \\ 3 \\ -2}> }{\norm{\qbm{1 \\ -1 \\ 2}} \norm{\qbm{0 \\ 3 \\ -2}}} \\
+    &= \frac{-15}{\sqrt{23} \cdot \sqrt{21}} \\
+    &= \frac{-15}{\sqrt{483}}
+\end{align*}
+
+They are not orthogonal as $<\qbm{1 \\ -1 \\ 2}, \qbm{0 \\ 3 \\ -2}> \neq 0$.
+
+\subsection*{Problem 3}
+\textit{Textbook page 41, problem 18.}\newline
+
+Because it doesn't hold the \textit{positivity} property for $<\qbm{1 \\2}, \qbm{1 \\2}> = 1 \cdot 1 - 2 \cdot 2 = -3 \not \geq 0$.
+
+\subsection*{Problem 4}
+\textit{See HW instruction.}\newline
+
+Let $A = \qbm{a_{1R} + a_{1I} i \\ a_{2R} + a_{2I} i \\ \dots \\ a_{mR} + a_{mI} i}$ and same for $B$ in terms of notation. For clarity of demostration, assume the $a, b$ in below are in fact $a_{jk}, b_{jk}$; now to show the purposed mapping is an inner product:
+
+\begin{itemize}
+    \item \textit{Conjugate Symmetry}: $<A, B> = \sum_j \sum_k a_{R} b_{R} - a_{R}b_{I}i + a_{I}b_{R}i + a_{I}b_{I} \\= \overline{\sum_j \sum_k b_{R}a_{R}  - b_{R}a_{I}i + b_{I}a_{R}i + b_{I}a_{I}} = \sum_j \sum_k b_{R}a_{R} + b_{R}a_{I}i - b_{I}a_{R}i + b_{I}a_{I} = \overline{<B, A>} $
+    \item \textit{Positivity}: $<A, A> = \sum_j \sum_k a_R^2 - a_R a_I i + a_I a_R i + aI^2 = a_R^2 + aI^2 \geq 0$ as long as $A \neq 0$.
+    \item \textit{Sequlinearity}: $<\lambda u + w, z> = \lambda (u_R + w_R)z_R - \lambda (u_R + w_R)z_I i +  \lambda (u_I + w_I)z_R i +  \lambda (u_I + w_I)z_i \\
+    = \lambda(u_R z_R - u_R z_I i + u_I z_R i + u_I z_I) + \lambda(w_R z_R - w_R z_I i + w_I z_R i + w_I z_I) \\
+    = \lambda <u, z> + \lambda <w, z> $
+\end{itemize}
+
+As all necessary conditions have been achicved, the purposed mapping is a defined inner product.
+
+
+\end{document}
+
