@@ -54,15 +54,15 @@ Shaochen (Henry) ZHONG, Zhitao (Robert) CHEN, John MAYS, Huaijin XIN\\ \ilc{\{sx
 \section*{Problem 1}
 \textit{Textbook page 42, problem 22.}\newline
 
-Since we know that $\norm{x} = \sqrt{<x, x>}$. For $x, y \in V$ we may have:
+Since we know that $\norm{x} = \sqrt{<x, x>}$; and due to conjugate symmetry we know that $<x, y> = \overline{y, x}$, implying $<x, y> + <y, x> =  2 Re<x, y>$. Thus, for $x, y \in V$, we may have:
 
 \begin{align*}
     \norm{x + y}^2 &= <x + y, x + y> \\
     &= <x, x> + <x, y> + <y, x> + <y, y> \\
-    &= \norm{x}^2 + 2<x, y> + \norm{y}^2 \\
+    &= \norm{x}^2 + 2 Re<x, y> + \norm{y}^2 \\
     \norm{x - y}^2 &= <x - y, x - y> \\
     &= <x, x> + (-<x, y>) + (-<y, x>) + <y, y> \\
-    &= \norm{x}^2 - 2<x, y> + \norm{y}^2 \\
+    &= \norm{x}^2 - 2 Re<x, y>+ \norm{y}^2 \\
     \Longrightarrow& \norm{x + y}^2 + \norm{x - y}^2 = 2\norm{x}^2 + 2\norm{y}^2
 \end{align*}
 
@@ -71,7 +71,7 @@ The equality-in-question is therefore shown.
 \section*{Problem 2}
 \textit{See HW instruction.}\newline
 
-Known from the above problem, we have:
+Known from the above problem, we have the following (note we don't have to specify $Re<x, y>$ here as the problem specified $V$ is a vector space with a real valued inner product, so $Re<x, y> = <x, y>$):
 
 \begin{align*}
     \norm{x + y}^2 + \norm{x - y}^2 &= \norm{x}^2 + 2<x, y> + \norm{y}^2  - (\norm{x}^2 - 2<x, y> + \norm{y}^2) \\
