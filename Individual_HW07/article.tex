@@ -1,0 +1,87 @@
+\documentclass[11pt]{article}
+\usepackage{setspace}
+\setstretch{1}
+\usepackage{amsmath,amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage[hang, flushmargin]{footmisc}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage[nameinlink]{cleveref}
+\usepackage{footnotebackref}
+\usepackage{url}
+\usepackage{listings}
+\usepackage[most]{tcolorbox}
+\usepackage{inconsolata}
+\usepackage[papersize={8.5in,11in}, margin=1in]{geometry}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{esint}
+\usepackage{url}
+\usepackage{enumitem}
+\usepackage{subfig}
+\usepackage{wasysym}
+\newcommand{\ilc}{\texttt}
+\usepackage{etoolbox}
+\usepackage{algorithm}
+\usepackage{changepage}
+% \usepackage{algorithmic}
+\usepackage[noend]{algpseudocode}
+\usepackage{tikz}
+\usetikzlibrary{matrix,positioning,arrows.meta,arrows}
+\patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
+% \PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
+
+\providecommand{\myceil}[1]{\left \lceil #1 \right \rceil }
+\providecommand{\myfloor}[1]{\left \lfloor #1 \right \rfloor }
+\providecommand{\qbm}[1]{\begin{bmatrix} #1 \end{bmatrix}}
+\providecommand{\qpm}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+\providecommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\providecommand{\len}[1]{\left| #1 \right|}
+
+\begin{document}
+
+
+
+\title{\textbf{MATH 307: Individual Homework 7}}
+
+
+\author{Shaochen (Henry) ZHONG, \ilc{sxz517@case.edu}}
+
+\date{Due and submitted on 03/01/2021 \\ Spring 2021, Dr. Guo}
+\maketitle
+
+
+
+\subsection*{Problem 1}
+\textit{See HW instruction.}\newline
+
+$X$ is vector of $[x_1, x_2, \dots, x_n]$. And we know that $<u, v> \leq |u||v|$
+
+\begin{align*}
+    \sum_{i} \len{x_i} &= <X, 1> \\
+    \sqrt{n} \sqrt{\sum_{i} \len{x_i}^2} &= \sqrt{n} \len{X} = \len{X} \len{\sqrt{n}} \\
+    \text{Let } \ n = 1 \ &\text{and according to the Cauchy-Schwartz inequality} \\
+    <X, 1> &\leq \len{X} \len{1} \\
+    \sum_{i} \len{x_i} &\leq \sqrt{n} \len{X} = \len{X} \len{\sqrt{n}}
+\end{align*}
+
+for all $n > 1$.
+
+\subsection*{Problem 2}
+\textit{See HW instruction.}\newline
+
+For the ease of expression, for $A$ of $\mathbb{C}^{m \times n}$ where on index $(i, j)$ we have $a_{ij}$, $A^k$ has $(a_{ij})^k$.
+
+Base on the Cauchy-Schwartz inequality, we have:
+
+\begin{align*}
+    <A^2, B^3> &\leq |A^2||B^3| \\
+    &\leq \sqrt{<A^2, A^2>} \cdot \sqrt{<B^3, B^3>} \\
+    \sum_i \sum_j \len{a_{ij}}^2 \len{b_{ij}}^3 &\leq \sqrt{\sum_i \sum_j \len{a_{ij}}^2 \len{a_{ij}}^2} \cdot \sqrt{\sum_i \sum_j \len{b_{ij}}^3 \len{b_{ij}}^3} \\
+    \sum_i \sum_j \len{a_{ij}}^2 \len{b_{ij}}^3 &\leq \sqrt{\sum_i \sum_j \len{a_{ij}}^4} \cdot \sqrt{\sum_i \sum_j \len{b_{ij}}^6}
+\end{align*}
+
+
+
+\end{document}
+
