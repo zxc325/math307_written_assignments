@@ -80,7 +80,25 @@ As all conditions for norm is proven, we may confirm $\sum_i^n \len{x_i}$ is a n
 \subsection*{Problem 2}
 \textit{See HW instruction.}\newline
 
+For the ease of expression we let $\len{x_k}$ to have the maximum value among all $\len{x_i}$. We first to show $\norm{x}_{\infty} \leq \norm{x}_1 $
 
+\begin{align*}
+    \norm{x}_{\infty} &= \len{x_k} \\
+    \norm{x}_1 &= \sum_i^n \len{x_i} = \len{x_1} + \len{x_2} + \dots + \len{x_k} + \dots + \len{x_n} \\
+    \text{Since all} &\ \len{x_i} \geq 0 \\
+    \Longrightarrow \norm{x}_{\infty} &\leq \norm{x}_1
+\end{align*}
+
+Now to show that $\norm{x}_1 \leq n\norm{x}_{\infty}$:
+
+\begin{align*}
+    \norm{x}_1 &= \sum_i^n \len{x_i} = \underbrace{\len{x_1} + \len{x_2} + \dots + \len{x_k} + \dots + \len{x_n}}_{\text{$n$ elements}} \\
+    n\norm{x}_{\infty} &= n \cdot \len{x_k} \\
+    \text{Since} &\ \len{x_k} \geq \len{x_i} \ \text{for all} \ \len{x_i}\\
+    \Longrightarrow \norm{x}_1 &\leq n\norm{x}
+\end{align*}
+
+By combining the above two findings together we have $\norm{x}_{\infty} \leq \norm{x}_1  \leq n\norm{x}$ and we have therefore proven the $1$ and $\infty$ norm are equivalent in $\mathbb{C}^n$.
 
 \end{document}
 
