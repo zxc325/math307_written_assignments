@@ -1,0 +1,86 @@
+\documentclass[11pt]{article}
+\usepackage{setspace}
+\setstretch{1}
+\usepackage{amsmath,amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage[hang, flushmargin]{footmisc}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage[nameinlink]{cleveref}
+\usepackage{footnotebackref}
+\usepackage{url}
+\usepackage{listings}
+\usepackage[most]{tcolorbox}
+\usepackage{inconsolata}
+\usepackage[papersize={8.5in,11in}, margin=1in]{geometry}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{esint}
+\usepackage{url}
+\usepackage{enumitem}
+\usepackage{subfig}
+\usepackage{wasysym}
+\newcommand{\ilc}{\texttt}
+\usepackage{etoolbox}
+\usepackage{algorithm}
+\usepackage{changepage}
+% \usepackage{algorithmic}
+\usepackage[noend]{algpseudocode}
+\usepackage{tikz}
+\usetikzlibrary{matrix,positioning,arrows.meta,arrows}
+\patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
+% \PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
+
+\providecommand{\myceil}[1]{\left \lceil #1 \right \rceil }
+\providecommand{\myfloor}[1]{\left \lfloor #1 \right \rfloor }
+\providecommand{\qbm}[1]{\begin{bmatrix} #1 \end{bmatrix}}
+\providecommand{\qpm}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+\providecommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\providecommand{\len}[1]{\left| #1 \right|}
+
+\begin{document}
+
+
+
+\title{\textbf{MATH 307: Individual Homework 8}}
+
+
+\author{Shaochen (Henry) ZHONG, \ilc{sxz517@case.edu}}
+
+\date{Due and submitted on 03/03/2021 \\ Spring 2021, Dr. Guo}
+\maketitle
+
+
+
+\subsection*{Problem 1}
+\textit{See HW instruction.}\newline
+
+For the ease of expression let the following $\norm{x}$ be $\norm{x}_1$ in this problem.
+
+We know $\sum_i^n \len{x_i}$ is a norm as it shows \textit{non-negativity} as we always have $\sum_i^n \len{x_i} \geq 0$ as $\len{x_i} = \sqrt{Re(x_i)^2 + IM(x_i)^2} \geq 0$.
+
+It also shows \textit{scaling} as for $\norm{\lambda x}$ for all $\lambda \in \mathbb{R}$ we have:
+
+\begin{align*}
+    \norm{\lambda x} &= \sum_i^n \len{\lambda x_i} \\
+    &= \sum_i^n \len{\lambda (\sqrt{Re(x_i)^2 + IM(x_i)^2})} \\
+    &= \lambda \sum_i^n \len{x_i} = \len{\lambda} \sum_i^n \len{x_i}
+\end{align*}
+
+For \textit{Triangle inequality}, assume we have a $y = [y_1, y_2, y_3, \dots, y_n]$ for $y_i \in \mathbb{C}$. We must have:
+
+\begin{align*}
+    \norm{x + y} &= \norm{\sum_i^n \len{x_i + y_i}} =\sum_i^n \len{x_i + y_i} \\
+    \sum_i^n \len{x_i + y_i} &\leq \sum_i^n \len{x_i} + \len{y_i} = \norm{x} + \norm{y} \\
+    \norm{x + y} &\leq \norm{x} + \norm{y}
+\end{align*}
+
+As all conditions for norm is proven, we may confirm $\sum_i^n \len{x_i}$ is a norm.
+
+\subsection*{Problem 2}
+\textit{See HW instruction.}\newline
+
+
+
+\end{document}
+
