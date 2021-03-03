@@ -57,14 +57,14 @@
 
 For the ease of expression let the following $\norm{x}$ be $\norm{x}_1$ in this problem.
 
-We know $\sum_i^n \len{x_i}$ is a norm as it shows \textit{non-negativity} as we always have $\sum_i^n \len{x_i} \geq 0$ as $\len{x_i} = \sqrt{Re(x_i)^2 + IM(x_i)^2} \geq 0$.
+We know $\sum_i^n \len{x_i}$ is a norm as it shows \textit{non-negativity} as we always have $\sum_i^n \len{x_i} \geq 0$ as $\len{x_i} = \sqrt{Re(x_i)^2 + Im(x_i)^2} \geq 0$.
 
 It also shows \textit{scaling} as for $\norm{\lambda x}$ for all $\lambda \in \mathbb{R}$ we have:
 
 \begin{align*}
     \norm{\lambda x} &= \sum_i^n \len{\lambda x_i} \\
     &= \sum_i^n \len{\lambda (\sqrt{Re(x_i)^2 + IM(x_i)^2})} \\
-    &= \lambda \sum_i^n \len{x_i} = \len{\lambda} \sum_i^n \len{x_i}
+    &= \lambda \sum_i^n \len{x_i} = \len{\lambda} \norm{x}
 \end{align*}
 
 For \textit{Triangle inequality}, assume we have a $y = [y_1, y_2, y_3, \dots, y_n]$ for $y_i \in \mathbb{C}$. We must have:
@@ -75,12 +75,12 @@ For \textit{Triangle inequality}, assume we have a $y = [y_1, y_2, y_3, \dots, y
     \norm{x + y} &\leq \norm{x} + \norm{y}
 \end{align*}
 
-As all conditions for norm is proven, we may confirm $\sum_i^n \len{x_i}$ is a norm.
+As all conditions for norm are proven, we may confirm $\sum_i^n \len{x_i}$ is a norm.
 
 \subsection*{Problem 2}
 \textit{See HW instruction.}\newline
 
-For the ease of expression we let $\len{x_k}$ to have the maximum value among all $\len{x_i}$. We first to show $\norm{x}_{\infty} \leq \norm{x}_1 $
+For the ease of expression we let $\len{x_k}$ to have the maximum value among all $\len{x_i}$. We first to show $\norm{x}_{\infty} \leq \norm{x}_1$:
 
 \begin{align*}
     \norm{x}_{\infty} &= \len{x_k} \\
@@ -95,10 +95,10 @@ Now to show that $\norm{x}_1 \leq n\norm{x}_{\infty}$:
     \norm{x}_1 &= \sum_i^n \len{x_i} = \underbrace{\len{x_1} + \len{x_2} + \dots + \len{x_k} + \dots + \len{x_n}}_{\text{$n$ elements}} \\
     n\norm{x}_{\infty} &= n \cdot \len{x_k} \\
     \text{Since} &\ \len{x_k} \geq \len{x_i} \ \text{for all} \ \len{x_i}\\
-    \Longrightarrow \norm{x}_1 &\leq n\norm{x}
+    \Longrightarrow \norm{x}_1 &\leq n\norm{x}_{\infty}
 \end{align*}
 
-By combining the above two findings together we have $\norm{x}_{\infty} \leq \norm{x}_1  \leq n\norm{x}$ and we have therefore proven the $1$ and $\infty$ norm are equivalent in $\mathbb{C}^n$.
+By combining the above two findings together we have $\norm{x}_{\infty} \leq \norm{x}_1  \leq n\norm{x}_{\infty}$. Thus, the $1$ and $\infty$ norm are equivalent in $\mathbb{C}^n$.
 
 \end{document}
 
