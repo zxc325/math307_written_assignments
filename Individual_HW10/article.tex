@@ -123,13 +123,19 @@ To find the basis $e_1, e_2$ based on Gram-Schmidt, we denote $v_1 = 1$ and $v_2
 
 Now to find $e_2$ base on $v_2$ for $e_2 = v_2 - p_{e_1}(v_2)$:
 
+% \begin{align*}
+%     e_2 &= v_2 - <v_2, e_1>\frac{e_1}{\norm{e_1}^2} = v_2 - (\int_{0}^{1} x \cdot 1 \cdot dx)\frac{e_1}{\norm{e_1}^2} \\
+%     &= v_2 - \frac{1}{2}\frac{e_1}{\norm{e_1}^2} \\
+%     &= x - \frac{1}{2}
+% \end{align*}
+
 \begin{align*}
-    e_2 &= v_2 - <v_2, e_1>\frac{e_1}{\norm{e_1}^2} = v_2 - (\int_{0}^{1} x \cdot 1 \cdot dx)\frac{e_1}{\norm{e_1}^2} \\
-    &= v_2 - \frac{1}{2}\frac{e_1}{\norm{e_1}^2} \\
-    &= x - \frac{1}{2}
+    e_2 &= \frac{ v_2 - <v_2, e_1> e_1}{\norm{ v_2 - <v_2, e_1> e_1}} \\
+    &= \frac{x - \frac{1}{2}}{\sqrt{\int_{0}^{1} (x - \frac{1}{2})^2}} \\
+    &= \sqrt{12}(x - \frac{1}{2})
 \end{align*}
 
-Since $V$ has a dimention of 2 and we have $1$ and $x - \frac{1}{2}$ by the Gram-Schmidt, they are the orthonormal basis of $V$.
+Since $V$ has a dimension of 2 and we have $1$ and $\sqrt{12}(x - \frac{1}{2})$ by the Gram-Schmidt, they are the orthonormal basis of $V$.
 
 \end{document}
 
