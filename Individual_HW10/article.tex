@@ -1,0 +1,135 @@
+\documentclass[11pt]{article}
+\usepackage{setspace}
+\setstretch{1}
+\usepackage{amsmath,amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage[hang, flushmargin]{footmisc}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage[nameinlink]{cleveref}
+\usepackage{footnotebackref}
+\usepackage{url}
+\usepackage{listings}
+\usepackage[most]{tcolorbox}
+\usepackage{inconsolata}
+\usepackage[papersize={8.5in,11in}, margin=1in]{geometry}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{esint}
+\usepackage{url}
+\usepackage{enumitem}
+\usepackage{subfig}
+\usepackage{wasysym}
+\newcommand{\ilc}{\texttt}
+\usepackage{etoolbox}
+\usepackage{algorithm}
+\usepackage{changepage}
+% \usepackage{algorithmic}
+\usepackage[noend]{algpseudocode}
+\usepackage{tikz}
+\usetikzlibrary{matrix,positioning,arrows.meta,arrows}
+\patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
+% \PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
+
+\providecommand{\myceil}[1]{\left \lceil #1 \right \rceil }
+\providecommand{\myfloor}[1]{\left \lfloor #1 \right \rfloor }
+\providecommand{\qbm}[1]{\begin{bmatrix} #1 \end{bmatrix}}
+\providecommand{\qpm}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+\providecommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\providecommand{\len}[1]{\left| #1 \right|}
+
+\begin{document}
+
+
+
+\title{\textbf{MATH 307: Individual Homework 10}}
+
+
+\author{Shaochen (Henry) ZHONG, \ilc{sxz517@case.edu}}
+
+\date{Due and submitted on 03/10/2021 \\ Spring 2021, Dr. Guo}
+\maketitle
+
+
+
+\subsection*{Problem 1}
+\textit{Textbook page 56, problem 6.}\newline
+% v1 = < -1, 1, 0, 2 >
+% v4 = < 0, 1, 1, 1 >
+
+% P_{v}(w) = < w, v/|v| > v/|v| project w onto v
+
+\begin{align*}
+    P_{v_1}(v_4) &= < v_4, \frac{v_1}{\norm{v_1}} > \frac{v_1}{\norm{v_1}} \\
+    &= < \qbm{0 \\ 1 \\ 1 \\ 1\\}, \frac{\qbm{-1 \\ 1 \\ 0 \\ 2}}{\sqrt{6}} > \cdot \frac{\qbm{-1 \\ 1 \\ 0 \\ 2}}{\sqrt{6}} = \frac{3}{\sqrt{6}} \cdot \frac{\qbm{-1 \\ 1 \\ 0 \\ 2}}{\sqrt{6}} = \frac{1}{2} \qbm{-1 \\ 1 \\ 0 \\ 2} \\
+    &= [\frac{-1}{2}, \frac{1}{2}, 0, 1]
+\end{align*}
+
+\begin{align*}
+    P_{v_4}(v_1) &= < v_1, \frac{v_4}{\norm{v_4}} > \frac{v_4}{\norm{v_4}} \\
+    &= < \qbm{-1 \\ 1 \\ 0 \\ 2}, \frac{\qbm{0 \\ 1 \\ 1 \\ 1}}{\sqrt{3}} > \frac{\qbm{0 \\ 1 \\ 1 \\ 1}}{\sqrt{3}}
+    = \frac{3}{\sqrt{3}} \cdot \frac{\qbm{0 \\ 1 \\ 1 \\ 1}}{\sqrt{3}} \\
+    &= [0, 1, 1, 1]
+\end{align*}
+
+
+\subsection*{Problem 2}
+\textit{See HW instruction.}\newline
+
+
+\begin{table}
+    \centering
+    \begin{tabular}{ c | c c c c c c c c c}
+        \hline
+        $f$ & $1$ & $1$ & $1$ & $x$ & $x$ & $x$ & $x^2$ & $x^2$ & $x^2$ \\
+        $g$ & $1$ & $x$ & $x^2$ & $1$ & $x$ & $x^2$ & $1$ & $x$ & $x^2$ \\
+        \hline
+        $<f, g>$ & $\int_{0}^{1} 1 dx$ & $\int_{0}^{1} x dx$ & $\int_{0}^{1} x^2 dx$ & $\int_{0}^{1} x dx$ & $\int_{0}^{1} x^2 dx$ & $\int_{0}^{1} x^3 dx$ & $\int_{0}^{1} x^2 dx$  & $\int_{0}^{1} x^3 dx$ & $\int_{0}^{1} x^4 dx$
+    \end{tabular}
+\end{table}
+
+By inspecting the $<f, g>$ of possible combinations, we have $\int_{0}^{1} x^i dx$ for $i \in \{0, 1, 2, 3, 4\}$, which will yield results of $x, \frac{1}{2}x^2, \frac{1}{3}x^3, \frac{1}{4}x^4, \frac{1}{5}x^5$ respectively. It is clear that they are linearly independent as each resultant polynomial has a $x$ of different power and we must have $\lambda_{1}x + \lambda_{2}\frac{1}{2}x^2 + \lambda_{3}\frac{1}{3}x^3 + \lambda_{4}\frac{1}{4}x^4 + \lambda_{5}\frac{1}{5}x^5 = 0$ for all $\lambda = 0$.
+
+Now to show they are not orthogonal, we may simply take an example, say $\int_{0}^{1} 1 dx$, which equals to $x \Big|^1_0 = 1 \neq 0$ and therefore not orthogonal. In fact, all of these inner products are not orthogonal as they will have a result of $1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \frac{1}{5}$ respectively to the abovementioned orders.
+
+\subsection*{Problem 3}
+\textit{See HW instruction.}\newline
+
+
+\begin{align*}
+    P_{v_3}(v_1) &= < v_1, \frac{v_3}{\norm{v_3}} > \frac{v_3}{\norm{v_3}} \\
+    &= < \qbm{0 \\ 1 \\ 1}, \frac{\qbm{1 \\ 1 \\ 0}}{\sqrt{2}} > \cdot \frac{\qbm{1 \\ 1 \\ 0}}{\sqrt{2}} = \frac{1}{\sqrt{2}} \cdot \frac{\qbm{1 \\ 1 \\ 0}}{\sqrt{2}} = \frac{1}{2} \qbm{1 \\ 1 \\ 0} \\
+    &= [\frac{1}{2}, \frac{1}{2}, 0]
+\end{align*}
+
+
+\begin{align*}
+    P_{v_3}(v_2) &= < v_2, \frac{v_3}{\norm{v_3}} > \frac{v_3}{\norm{v_3}} \\
+    &= < \qbm{1 \\ 0 \\ 1}, \frac{\qbm{1 \\ 1 \\ 0}}{\sqrt{2}} > \cdot \frac{\qbm{1 \\ 1 \\ 0}}{\sqrt{2}} = \frac{1}{\sqrt{2}} \cdot \frac{\qbm{1 \\ 1 \\ 0}}{\sqrt{2}} = \frac{1}{2} \qbm{1 \\ 1 \\ 0} \\
+    &= [\frac{1}{2}, \frac{1}{2}, 0]
+\end{align*}
+
+Due to the linearity of inner product we must have:
+
+\begin{align*}
+    P_{v_3}(2 v_1 + v_2) &= 2 \cdot P_{v_3}(v_1) + P_{v_3}(v_2) \\
+    &= 2 \qbm{\frac{1}{2} \\ \frac{1}{2} \\ 0} +  \qbm{\frac{1}{2} \\ \frac{1}{2} \\ 0 } = [\frac{3}{2}, \frac{3}{2}, 0]
+\end{align*}
+
+\subsection*{Problem 4}
+\textit{See HW instruction.}\newline
+
+To find the basis $e_1, e_2$ based on Gram-Schmidt, we denote $v_1 = 1$ and $v_2 = x$, where $e_1 = \frac{v_1}{\norm{v_1}} = 1$.
+
+Now to find $e_2$ base on $v_2$ for $e_2 = v_2 - p_{e_1}(v_2)$:
+
+\begin{align*}
+    e_2 &= v_2 - <v_2, e_1>\frac{e_1}{\norm{e_1}^2} = v_2 - (\int_{0}^{1} x \cdot 1 \cdot dx)\frac{e_1}{\norm{e_1}^2} \\
+    &= v_2 - \frac{1}{2}\frac{e_1}{\norm{e_1}^2} \\
+    &= x - \frac{1}{2}
+\end{align*}
+
+Since $V$ has a dimention of 2 and we have $1$ and $x - \frac{1}{2}$ by the Gram-Schmidt, they are the orthonormal basis of $V$.
+
+\end{document}
+
