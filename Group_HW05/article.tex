@@ -1,0 +1,108 @@
+\documentclass[11pt]{article}
+\usepackage{setspace}
+\setstretch{1}
+\usepackage{amsmath,amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage[hang, flushmargin]{footmisc}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage[nameinlink]{cleveref}
+\usepackage{footnotebackref}
+\usepackage{url}
+\usepackage{listings}
+\usepackage[most]{tcolorbox}
+\usepackage{inconsolata}
+\usepackage[papersize={8.5in,11in}, margin=1in]{geometry}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{esint}
+\usepackage{url}
+\usepackage{enumitem}
+\usepackage{subfig}
+\usepackage{wasysym}
+\newcommand{\ilc}{\texttt}
+\usepackage{etoolbox}
+\usepackage{algorithm}
+\usepackage{changepage}
+% \usepackage{algorithmic}
+\usepackage[noend]{algpseudocode}
+\usepackage{tikz}
+\usepackage{gensymb}
+\usetikzlibrary{matrix,positioning,arrows.meta,arrows}
+\patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
+% \PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
+
+\providecommand{\myceil}[1]{\left \lceil #1 \right \rceil }
+\providecommand{\myfloor}[1]{\left \lfloor #1 \right \rfloor }
+\providecommand{\qbm}[1]{\begin{bmatrix} #1 \end{bmatrix}}
+\providecommand{\qpm}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+\providecommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\providecommand{\len}[1]{\left| #1 \right|}
+
+\begin{document}
+
+
+
+
+\title{\textbf{MATH 307: Group Homework 5}}
+
+
+\author{\textit{Group 8}\\
+Shaochen (Henry) ZHONG, Zhitao (Robert) CHEN, John MAYS, Huaijin XIN\\ \ilc{\{sxz517, zxc325, jkm100, hxx200\}@case.edu}}
+
+\date{Due and submitted on 03/12/2021 \\ Spring 2021, Dr. Guo}
+\maketitle
+
+% P_{v}(w) = < w, v/|v| > v/|v| project w onto v
+
+
+\subsection*{Problem 1}
+\textit{See HW instruction.}\newline
+
+The vector-in-question can be transform as:
+
+\begin{align*}
+    &= x_1 \qbm{1 \\ 1 \\ 0 \\ 1} + x_2 \qbm{-1 \\ 0 \\ 0 \\ 3} + x_3 \qbm{2 \\ 2 \\ 3 \\0} + x_4 \qbm{0 \\ 0 \\ 0 \\  3} \\
+    &= \qbm{1 & -1 & 2 & 0 \\
+            1 & 0 & 2 & 0 \\
+            0 & 0 & 3 & 0 \\
+            1 & 3 & 0 & 3} \cdot \qbm{x_1 \\ x_2 \\ x_3 \\ x_4 }
+\end{align*}
+
+\subsection*{Problem 2}
+\textit{See HW instruction.}\newline
+
+Assume the original vector $\qbm{x_0 \\ y_0}$ with a length of $r$ has a degree of $\theta$ and we intend to rotate it $\phi$ (in this case $\phi = 90\degree$) more degrees to have $\qbm{x_1 \\ y_1}$, we have:
+
+\begin{align*}
+    x_1 &= r \cos(\theta + \phi) = r(\cos \theta \cos \phi - \sin \theta \sin \phi) \\
+    &= r \cos \theta \cos \phi - r \sin \theta \sin \phi \\
+    &= x_0 \cos \phi - y_0 \sin \phi \\
+    y_1 &= r \sin(\theta + \phi) = r(\sin \theta \cos \phi + \cos \theta \sin \phi) \\
+    &= r\sin \theta \cos \phi + r\cos \theta \sin \phi \\
+    &= y_0 \cos \phi + x_0 \sin \phi
+\end{align*}
+
+As we need $A \qbm{x_0 \\ y_0} = \qbm{x_1 \\ y_1}$, we must have:
+
+\begin{align*}
+    x_1 &= x_0 \cos \phi - y_0 \sin \phi \\
+    y_1 &= y_0 \cos \phi + x_0 \sin \phi \\
+    \qbm{x_1 \\ y_1} &= \qbm{\cos \phi & -\sin \phi \\ \sin \phi & \cos \phi} \cdot \qbm{x_0 \\ y_0} \\
+    &\text{Since}\ \phi = 90\degree \\
+    \qbm{x_1 \\ y_1} &= \qbm{0 & -1 \\ 1 & 0} \cdot \qbm{x_0 \\ y_0}
+\end{align*}
+
+Thus, $A = \qbm{0 & -1 \\ 1 & 0}$.
+
+\subsection*{Problem 3}
+\textit{See HW instruction.}\newline
+
+$A$ is not a square matrix but a \textbf{retangular} one as it has unequal number of rows and columns. So it is also not a diagonal, upper-/lower-triangular as these require being a square matrix as prerequisite.
+
+$B$ is a \textbf{square} matrix (and therefore not retangular) as it has equal number of rows and columns. It is not diagonal, as we has non-zero entries outside of the main diagonal. It is a \textbf{lower-triangular} matrix as all entries above the main diagonal are zero.
+
+$C$ is a \textbf{square} matrix (and therefore not retangular) as it has equal number of rows and columns. It is also \textbf{diagonal} as it has zero entries except the main diagonal; it is also both an \textbf{upper-} and a \textbf{lower-triangular} matrix as all entries below/above its main diagonal are zero.
+
+\end{document}
+
