@@ -72,28 +72,34 @@ The vector-in-question can be transform as:
 \subsection*{Problem 2}
 \textit{See HW instruction.}\newline
 
-Assume the original vector $\qbm{x_0 \\ y_0}$ with a length of $r$ has a degree of $\theta$ and we intend to rotate it $\phi$ (in this case $\phi = 90\degree$) more degrees to have $\qbm{x_1 \\ y_1}$, we have:
+Assume the original vector $\qbm{x_0 \\ y_0}$ with a length of $r$ has a degree of $\theta$, we first reflect it about y-axis by swapping the $x$ and $y$ value and make $A_1 \qbm{x_0 \\ y_0} = \qbm{x_0 \\ -y_0}$, this means $A_1 = \qbm{-1 & 0 \\ 0 & 1}$.
+
+
+Say the $\qbm{x_0 \\ -y_0}$, we call it $\qbm{x_1 \\ y_1}$, got a degree of $\theta$, we then rotate it $\phi$ (in this case $\phi = 90\degree$) degrees more couterclock wisely to have $\qbm{x_2 \\ y_2}$:
 
 \begin{align*}
-    x_1 &= r \cos(\theta + \phi) = r(\cos \theta \cos \phi - \sin \theta \sin \phi) \\
+    x_2 &= r \cos(\theta + \phi) = r(\cos \theta \cos \phi - \sin \theta \sin \phi) \\
     &= r \cos \theta \cos \phi - r \sin \theta \sin \phi \\
-    &= x_0 \cos \phi - y_0 \sin \phi \\
-    y_1 &= r \sin(\theta + \phi) = r(\sin \theta \cos \phi + \cos \theta \sin \phi) \\
+    &= x_1 \cos \phi - y_1 \sin \phi \\
+    y_2 &= r \sin(\theta + \phi) = r(\sin \theta \cos \phi + \cos \theta \sin \phi) \\
     &= r\sin \theta \cos \phi + r\cos \theta \sin \phi \\
-    &= y_0 \cos \phi + x_0 \sin \phi
+    &= y_1 \cos \phi + x_1 \sin \phi
 \end{align*}
 
-As we need $A \qbm{x_0 \\ y_0} = \qbm{x_1 \\ y_1}$, we must have:
+As we need $A \qbm{x_1 \\ y_1} = \qbm{x_2 \\ y_2}$, we must have:
 
 \begin{align*}
-    x_1 &= x_0 \cos \phi - y_0 \sin \phi \\
-    y_1 &= y_0 \cos \phi + x_0 \sin \phi \\
-    \qbm{x_1 \\ y_1} &= \qbm{\cos \phi & -\sin \phi \\ \sin \phi & \cos \phi} \cdot \qbm{x_0 \\ y_0} \\
+    x_2 &= x_1 \cos \phi - y_1 \sin \phi \\
+    y_2 &= y_1 \cos \phi + x_1 \sin \phi \\
+    \qbm{x_2 \\ y_2} &= \qbm{\cos \phi & -\sin \phi \\ \sin \phi & \cos \phi} \cdot \qbm{x_1 \\ y_1} \\
     &\text{Since}\ \phi = 90\degree \\
-    \qbm{x_1 \\ y_1} &= \qbm{0 & -1 \\ 1 & 0} \cdot \qbm{x_0 \\ y_0}
+    \qbm{x_2 \\ y_2} &= \qbm{0 & -1 \\ 1 & 0} \cdot \qbm{x_1 \\ y_1} \\
+    &= \qbm{0 & -1 \\ 1 & 0} \cdot (\qbm{-1 & 0 \\ 0 & 1} \qbm{x_0 \\ y_0}) \\
+    &= (\qbm{0 & -1 \\ 1 & 0} \cdot \qbm{-1 & 0 \\ 0 & 1}) \qbm{x_0 \\ y_0} \\
+    \Longrightarrow A &= \qbm{0 & -1 \\ -1 & 0}
 \end{align*}
 
-Thus, $A = \qbm{0 & -1 \\ 1 & 0}$.
+Thus, $A = \qbm{0 & -1 \\ -1 & 0}$.
 
 \subsection*{Problem 3}
 \textit{See HW instruction.}\newline
