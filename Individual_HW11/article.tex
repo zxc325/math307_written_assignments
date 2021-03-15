@@ -1,0 +1,120 @@
+\documentclass[11pt]{article}
+\usepackage{setspace}
+\setstretch{1}
+\usepackage{amsmath,amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage[hang, flushmargin]{footmisc}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage[nameinlink]{cleveref}
+\usepackage{footnotebackref}
+\usepackage{url}
+\usepackage{listings}
+\usepackage[most]{tcolorbox}
+\usepackage{inconsolata}
+\usepackage[papersize={8.5in,11in}, margin=1in]{geometry}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{esint}
+\usepackage{url}
+\usepackage{enumitem}
+\usepackage{subfig}
+\usepackage{wasysym}
+\newcommand{\ilc}{\texttt}
+\usepackage{etoolbox}
+\usepackage{algorithm}
+\usepackage{changepage}
+% \usepackage{algorithmic}
+\usepackage[noend]{algpseudocode}
+\usepackage{tikz}
+\usepackage{pifont}
+\usetikzlibrary{matrix,positioning,arrows.meta,arrows}
+\patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
+% \PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
+
+\providecommand{\myceil}[1]{\left \lceil #1 \right \rceil }
+\providecommand{\myfloor}[1]{\left \lfloor #1 \right \rfloor }
+\providecommand{\qbm}[1]{\begin{bmatrix} #1 \end{bmatrix}}
+\providecommand{\qpm}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+\providecommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\providecommand{\len}[1]{\left| #1 \right|}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\begin{document}
+
+
+
+\title{\textbf{MATH 307: Individual Homework 11}}
+
+
+\author{Shaochen (Henry) ZHONG, \ilc{sxz517@case.edu}}
+
+\date{Due and submitted on 03/15/2021 \\ Spring 2021, Dr. Guo}
+\maketitle
+
+
+
+\subsection*{Problem 1}
+\textit{See HW instruction.}\newline
+
+It is a linear mapping as it satisfies the following conditions (for $\lambda \in \mathbb{R}$):
+
+\begin{align*}
+    f(\lambda u) &= f(\lambda (a_0 + a_1 x + a_2 x^2 + a_3 x^3) \\
+    &= f(\lambda a_0 + \lambda a_1 x + \lambda a_2 x^2 + \lambda a_3 x^3) \\
+    &= \lambda a_3 = \lambda f(u)\\
+    f(u + v) &= f(a_0 + a_1 x + a_2 x^2 + a_3 x^3 + b_0 + b_1 x + b_2 x^2 + b_3 x^3) \\
+    &= f( (a_0 + b_0) + (a_1 + b_1) x + (a_2 + b_2) x^2 + (a_3 + b_3) x^3 \\
+    &= a_3 + b_3 = f(u) + f(v)
+\end{align*}
+
+
+
+
+\subsection*{Problem 2}
+\textit{See HW instruction.}\newline
+
+\begin{itemize}
+    \item $A$ is diagonal, and therefore also upper-/lower-triangular, and symmatric. Since it is a matrix with elements in $\mathbb{R}$, it is also hermitian.
+    \item $B$ is not diagonal nor upper-triangular, but it is lower triangular. It is neither symmetric nor hermitian.
+    \item $C$ is not diagonal not lower-triangular, but it is upper-triangular. It is neither symmetric nor hermitian.
+    \item $D$ is not diagonal, not upper- or lower-triangular. It is symmatric but not hermitian as for row two in $D$, it should be equal to $[2, 4, i]$ but it is not.
+    \item $E$ is not diagonal, not upper- or lower-triangular. It is both symmatric and hermitian.
+    \item $F$ is not a square matrix so it is not diagonal, not upper-, and not lower-triangular. For the same reason it is also not symmatric nor hermitian.
+\end{itemize}
+
+\noindent For easy grading:
+\begin{table}
+    \centering
+    \begin{tabular}{ c | c c c c c c c c c}
+        \hline
+        matrix & Diagonal & UT & LT & Symmatric & Hermitian \\
+        \hline
+        $A$ & \cmark & \cmark & \cmark & \cmark & \cmark \\
+        $B$ & \xmark & \xmark & \cmark & \xmark & \xmark \\
+        $C$ & \xmark & \cmark & \xmark & \xmark & \xmark \\
+        $D$ & \xmark & \xmark & \xmark & \cmark & \xmark \\
+        $E$ & \xmark & \xmark & \xcmark & \cmark & \cmark \\
+        $F$ & \xmark & \xmark & \xmark & \xmark & \xmark \\
+    \end{tabular}
+\end{table}
+
+
+\subsection*{Problem 3}
+\textit{See HW instruction.}\newline
+
+
+First start with LHS, known that the $ij$-th entry in $(\alpha A + \beta B)$ is $\alpha A_{ij} + \beta B_{ij}$. Thus, by the definition of transpose, the $ij$-th entry in $(\alpha A + \beta B)^T$ must be $\alpha A_{ji} + \beta B_{ji}$.
+
+Now inspect the RHS, we have the $ij$-th entry in $\alpha A^T$ to be $\alpha A_{ji}$; similiarily, the $ij$-th entry in $\beta B^T$ is $\beta B_{ji}$. So the RHS equals to $\alpha A_{ji} + \beta B_{ji}$.\newline
+
+As the two sides are equal, the equality-in-question is therefore proven.
+
+\subsection*{Problem 4}
+\textit{See HW instruction.}\newline
+
+Being the diagonal entries of a Hermitian matrix $A$, each entry has to be real valued as we must have $A_{ij} = \overline{A_{ji}}$. This is only possible when the imaginary part of $A_{ij}$ is $0i$, so it must be a real valued number.
+
+\end{document}
+
