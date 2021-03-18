@@ -1,0 +1,84 @@
+\documentclass[11pt]{article}
+\usepackage{setspace}
+\setstretch{1}
+\usepackage{amsmath,amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage[hang, flushmargin]{footmisc}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage[nameinlink]{cleveref}
+\usepackage{footnotebackref}
+\usepackage{url}
+\usepackage{listings}
+\usepackage[most]{tcolorbox}
+\usepackage{inconsolata}
+\usepackage[papersize={8.5in,11in}, margin=1in]{geometry}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{esint}
+\usepackage{url}
+\usepackage{enumitem}
+\usepackage{subfig}
+\usepackage{wasysym}
+\newcommand{\ilc}{\texttt}
+\usepackage{etoolbox}
+\usepackage{algorithm}
+\usepackage{changepage}
+% \usepackage{algorithmic}
+\usepackage[noend]{algpseudocode}
+\usepackage{tikz}
+\usepackage{gensymb}
+\usetikzlibrary{matrix,positioning,arrows.meta,arrows}
+\patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
+% \PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
+
+\providecommand{\myceil}[1]{\left \lceil #1 \right \rceil }
+\providecommand{\myfloor}[1]{\left \lfloor #1 \right \rfloor }
+\providecommand{\qbm}[1]{\begin{bmatrix} #1 \end{bmatrix}}
+\providecommand{\qpm}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+\providecommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\providecommand{\len}[1]{\left| #1 \right|}
+
+\begin{document}
+
+
+
+
+\title{\textbf{MATH 307: Group Homework 6}}
+
+
+\author{\textit{Group 8}\\
+Shaochen (Henry) ZHONG, Zhitao (Robert) CHEN, John MAYS, Huaijin XIN\\ \ilc{\{sxz517, zxc325, jkm100, hxx200\}@case.edu}}
+
+\date{Due and submitted on 03/19/2021 \\ Spring 2021, Dr. Guo}
+\maketitle
+
+
+
+
+\subsection*{Problem 1}
+\textit{See HW instruction.}\newline
+
+\subsection*{Problem 2}
+\textit{See HW instruction.}\newline
+
+\subsection*{Problem 3}
+\textit{See HW instruction.}\newline
+
+Known that $M_{ij}^* = \overline{M_{ji}}$, we have:
+
+\begin{align*}
+    LHS &= (AB)^*_{ij} = \overline{(AB)_{ji}} = \sum^{n}_{k} \overline{A_{jk} B_{ki}} \\
+    RHS &= (B^* A^*)_{ij} = \sum^{n}_{k} B^{*}_{ik} A^{*}_{kj} = \sum^{n}_{k} \overline{B_{ki} A_{jk}} \\
+    \Longrightarrow& \  (AB)^*_{ij} = (B^* A^*)_{ij}
+\end{align*}
+
+\subsection*{Problem 4}
+\textit{See HW instruction.}\newline
+
+\subsection*{Problem 5}
+\textit{See HW instruction.}\newline
+
+
+\end{document}
+
