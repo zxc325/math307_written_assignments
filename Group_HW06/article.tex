@@ -123,6 +123,30 @@ Known that $M_{ij}^* = \overline{M_{ji}}$, we have:
 \subsection*{Problem 5}
 \textit{See HW instruction.}\newline
 
+\subsubsection*{Proof:}
+Let A be invertible:\\
+Since A is an $n\times n$ matrix and invertible\\
+So Rank A = n since $\lvert A \rvert$ $\neq$ 0, which implies Rank A = n\\
+And we know that if Rank A = n then the column vectors are linearly independent.\\
+Therefore, if A is invertible, then all the columns vectors are linearly independent.\\
+Now go \textbf{conversely}:\\
+Let the columns of A be linearly independent.\\
+We want to show that Rank A = n,\\
+Assume that Rank A = m $<$ n,\\
+then nullity of A = No. of Columns - Rank = n - m.\\
+But nullity is the number of solutions of the system Ax = 0,\\
+And we know that the homogeneous system always has unique solution or infinitely many solutions. They can't have finite solutions.\\
+So n - m is either 0 or 1, i.e. m = n or m = n - 1\\
+if m = n, then result is trivial;\\
+if m = n - 1, then Rank A = n - 1.\\
+So number of non zero row of A = n - 1\\
+There must be a zero row, which means that the system Ax = 0 has a dependent variable of A.\\
+Therefore, A has a dependent column vector, which violets that columns of A are linear independent.\\
+So we now have a contradiction. Hence the assumption is wrong. \\
+$\implies RankA = n$\\
+Therefore, if $\lvert A \rvert$ $\neq$ 0 and the columns of A is linearly independent, then A is invertible.\\
+So A is invertible if and only if all the columns of A are linearly independent. \\
+
 
 \end{document}
 
