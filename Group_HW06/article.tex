@@ -59,6 +59,36 @@ Shaochen (Henry) ZHONG, Zhitao (Robert) CHEN, John MAYS, Huaijin XIN\\ \ilc{\{sx
 \subsection*{Problem 1}
 \textit{See HW instruction.}\newline
 
+
+Assume the original vector $\qbm{x_0 \\ y_0}$ with a length of $r$ has a degree of $\theta$, we first reflect it about y-axis by swapping the $x$ value with $-x$ and make $A \qbm{x_0 \\ y_0} = \qbm{-x_0 \\ y_0}$, this means $A = \qbm{-1 & 0 \\ 0 & 1}$.
+
+
+Say the $\qbm{-x_0 \\ y_0}$, we call it $\qbm{x_1 \\ y_1}$, got a degree of $\theta$, we then rotate it $\phi$ (in this case $\phi = \frac{\pi}{4}$) degrees more couterclock wisely to have $\qbm{x_2 \\ y_2}$:
+
+\begin{align*}
+    x_2 &= r \cos(\theta + \phi) = r(\cos \theta \cos \phi - \sin \theta \sin \phi) \\
+    &= r \cos \theta \cos \phi - r \sin \theta \sin \phi \\
+    &= x_1 \cos \phi - y_1 \sin \phi \\
+    y_2 &= r \sin(\theta + \phi) = r(\sin \theta \cos \phi + \cos \theta \sin \phi) \\
+    &= r\sin \theta \cos \phi + r\cos \theta \sin \phi \\
+    &= y_1 \cos \phi + x_1 \sin \phi
+\end{align*}
+
+As we need $B \qbm{x_1 \\ y_1} = \qbm{x_2 \\ y_2}$, we must have:
+
+\begin{align*}
+    x_2 &= x_1 \cos \phi - y_1 \sin \phi \\
+    y_2 &= y_1 \cos \phi + x_1 \sin \phi \\
+    \qbm{x_2 \\ y_2} &= \qbm{\cos \phi & -\sin \phi \\ \sin \phi & \cos \phi} \cdot \qbm{x_1 \\ y_1} \\
+    &\text{Since}\ \phi = \frac{\pi}{4} \\
+    \qbm{x_2 \\ y_2} &= \qbm{\frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}}  \\ \frac{1}{\sqrt{2}}  & \frac{1}{\sqrt{2}} } \cdot \qbm{x_1 \\ y_1} \\
+    &= \qbm{\frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}}  \\ \frac{1}{\sqrt{2}}  & \frac{1}{\sqrt{2}} } \cdot (\qbm{-1 & 0 \\ 0 & 1} \qbm{x_0 \\ y_0}) \\
+    &= (\qbm{\frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}}  \\ \frac{1}{\sqrt{2}}  & \frac{1}{\sqrt{2}} } \cdot \qbm{-1 & 0 \\ 0 & 1}) \qbm{x_0 \\ y_0} \\
+    &= \qbm{-\frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} \\ -\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}} \cdot \qbm{x_0 \\ y_0}
+\end{align*}
+
+Thus, $C = \qbm{-\frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} \\ -\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}}$, for $C \cdot \qbm{x \\ y}$ will conduct the proposed operations on $\qbm{x \\ y}$.
+
 \subsection*{Problem 2}
 \textit{See HW instruction.}\newline
 
