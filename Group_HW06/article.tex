@@ -92,6 +92,19 @@ Thus, $C = \qbm{-\frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} \\ -\frac{1}{\sqrt{2}}
 \subsection*{Problem 2}
 \textit{See HW instruction.}\newline
 
+\paragraph*{LHS:}
+The $ij$-th entry of $(A+B) $ is $a_{ij}+b_{ij}$\\
+%The $ij$-th of $(A+B)^2$ can be thought of with the matrix-multiplication product of $(A+B)(A+B)$:\\
+The $ij$-th entry of $(A+B)^2 = (A+B)(A+B)$ is $\sum_{k=1}^n (a_{ik}+b_{ik})(a_{kj}+b_{kj})= \sum_{k=1}^n a_{ik}a_{kj}+a_{ik}b_{kj}+b_{ik}a_{kj}+b_{ik}b_{kj}$
+\paragraph*{RHS:}
+The $ij$-th entry of $A^2$ is $\sum_{k=1}^n a_{ik}a_{kj}$\\
+It follows that the $ij$-th entry of $B^2$ is $\sum_{k=1}^n b_{ik}b_{kj}$\\
+The $ij$-th entry of $AB$ is $\sum_{k=1}^n a_{ik}b_{kj}$\\
+Therefore the $ij$-th entry of $A^2+2AB+B^2$ is $\sum_{k=1}^n a_{ik}a_{kj} + 2a_{ik}b_{kj}+ b_{ik}b_{kj}$
+\paragraph*{Conclusion:}
+The respective $ij$-th entry of the LHS and the RHS of the equation are not equivalent unless $AB = BA$, which is not guaranteed; therefore $(A+B)^2=A^2+2AB+B^2$ is not true for two square matrices, $A$ and $B,$ of the same size.
+
+
 \subsection*{Problem 3}
 \textit{See HW instruction.}\newline
 
@@ -105,6 +118,7 @@ Known that $M_{ij}^* = \overline{M_{ji}}$, we have:
 
 \subsection*{Problem 4}
 \textit{See HW instruction.}\newline
+
 
 \subsection*{Problem 5}
 \textit{See HW instruction.}\newline
